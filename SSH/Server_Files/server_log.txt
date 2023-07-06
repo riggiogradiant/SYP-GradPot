@@ -3,3 +3,5 @@ ls
 ld
 ls
 po
+ls
+lf
