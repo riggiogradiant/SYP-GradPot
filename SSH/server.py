@@ -8,20 +8,6 @@ import subprocess
 CWD = os.path.dirname(os.path.realpath(__file__))
 HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'id_rsa'))
 
-LOG_FILE = './Server_Files/server_log.txt'
-WORKING_DIRECTORY = './Server_Files/INFO_SERVER'
-OUPUT_FILE = './Server_Files/output.txt'
-
-# Funciones que creamos a parte de las de la clase servidor
-def replace_prefix(output):
-
-    replacement = '/root'
-
-    part_before_INFO_SERVER = output.split("/INFO_SERVER/")[0]
-    output = output.replace(part_before_INFO_SERVER, replacement)
-
-    return output
-
 # Leer usuarios y contraseñas validos
 def parse_file(file_path):
     usernames = []
@@ -47,24 +33,19 @@ class Server(paramiko.ServerInterface):
             return paramiko.OPEN_SUCCEEDED
         return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
 
+    
     def check_auth_password(self, username, password):
-        if (username == 'user') and (password == 'pass'):
-            return paramiko.AUTH_SUCCESSFUL
+        usernames, passwords = parse_file('./Server_Files/INFO_SERVER/etc/userdb.txt')
+    
+        if username in usernames and password in passwords:
+            if usernames.index(username) == passwords.index(password):
+                return paramiko.AUTH_SUCCESSFUL
+
         return paramiko.AUTH_FAILED
-    
-    # def check_auth_password(self, username, password):
-    # usernames, passwords = parse_file('ruta_del_archivo.txt')
-    
-    # if username in usernames and password in passwords:
-    #     return paramiko.AUTH_SUCCESSFUL
-    
-    # return paramiko.AUTH_FAILED
 
     
 
 if __name__ == '__main__':
-
-
 
     #ip y puerto donde se va a ejecutar el servidor
     server = '127.0.0.1'
@@ -109,30 +90,20 @@ if __name__ == '__main__':
 
             if cmd_from_client != '':
 
-                subprocess.run(f'cd {WORKING_DIRECTORY} && {cmd_from_client} > ./../output.txt', shell=True)
-                # output_path = WORKING_DIRECTORY + OUPUT_FILE
-
-                # Guardar el mensaje en el archivo de registro
-                with open(LOG_FILE, 'a') as log_file:
-                    log_file.write(cmd_from_client + '\n')
-
-                # Leer el archivo de salida y obtener su contenido
-                with open(OUPUT_FILE, 'r') as file:
-                    output = file.read()
-                
-                # Cambiar el PWD real por /root
-                if cmd_from_client == 'pwd':
-                    output = replace_prefix(output)
+                # Envíamos el cmd al main y el se encarga de devolver lo que haya que enviar al cliente
+                output = subprocess.check_output(["python3", "../main.py", cmd_from_client])
+                output = output.decode().strip()
 
                 output = output.encode()
                 chan.send(output)
 
 
-            # else:
-            #     print('Cerrando el servidor')
-            #     bhSession.close()
-            #     break
+            else:
+                print('Cerrando el servidor')
+                bhSession.close()
+                break
 
             
     except KeyboardInterrupt:
         bhSession.close()
+
