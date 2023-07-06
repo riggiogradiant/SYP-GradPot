@@ -7,15 +7,19 @@ ruta_llamada = os.path.abspath(os.getcwd())
 
 # Comprobar si las peticiones vienen de SSH
 if "SSH" in ruta_llamada:
-    
+
     # Obtener el input del argumento de línea de comandos
     cmd_from_client = sys.argv[1]
 
+    #Si es un comando del tipo cd
+    if cmd_from_client.startswith("cd"):
+        function.cmd_cd(cmd_from_client)
+    else:
     #Llama a la función de ejecución del SSH
-    function.execute_cmd(cmd_from_client)
+        function.execute_cmd(cmd_from_client)
 
 # Comprobar si las peticiones vienen de Modbus
 elif "Modbus" in ruta_llamada:
-    print("La información proviene de la carpeta Modbus")
+    print("Protocolo Modbus")
 else:
-    print("No se pudo determinar la ubicación del archivo llamador")
+    print("No se pudo identificar el Protocolo")
