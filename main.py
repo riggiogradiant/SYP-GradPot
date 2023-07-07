@@ -13,10 +13,9 @@ if "SSH" in ruta_llamada:
 
     #Si es un comando del tipo cd
     if cmd_from_client.startswith("cd"):
-        function.cmd_cd(cmd_from_client)
-    else:
-    #Llama a la función de ejecución del SSH
-        function.execute_cmd(cmd_from_client)
+        function.cd_dealer(cmd_from_client)
+
+    else: function.execute_cmd(cmd_from_client)
 
 # Comprobar si las peticiones vienen de Modbus
 elif "Modbus" in ruta_llamada:

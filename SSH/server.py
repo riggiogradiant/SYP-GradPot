@@ -5,6 +5,13 @@ import sys
 import threading
 import subprocess
 
+import logging
+
+# Configurar el registro
+log_file = './Server_Files/server_log.txt'
+logging.basicConfig(filename=log_file, level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
 CWD = os.path.dirname(os.path.realpath(__file__))
 HOSTKEY = paramiko.RSAKey(filename=os.path.join(CWD, 'id_rsa'))
 
@@ -57,6 +64,7 @@ if __name__ == '__main__':
         sock.bind((server, ssh_port))
         sock.listen(100)
         print('[+] Listening for connection...')
+        logging.info('[+] Listening for connection...')
         client, addr = sock.accept()
     except Exception as e:
         print('[-] Listen failed' + str(e))
@@ -64,6 +72,7 @@ if __name__ == '__main__':
 
     else:
         print(f'[+] Got a connection from ', addr)
+        logging.info(f'[+] Got a connection from {addr}')
 
     bhSession = paramiko.Transport(client)
     bhSession.add_server_key(HOSTKEY)
@@ -75,10 +84,14 @@ if __name__ == '__main__':
 
     if chan is None:
         print('*** No Channel.')
+        logging.info('*** No Channel.')
         sys.exit(1)
 
     print('[+] Authenticated!')
     print(chan.recv(1024).decode())
+
+    logging.info('[+] Authenticated!')
+    
 
     print('============================================')
 

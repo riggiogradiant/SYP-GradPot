@@ -1,7 +1,27 @@
-pwd
+2023-07-07 14:40:59,388 - INFO - [+] Listening for connection...
+2023-07-07 14:41:04,572 - INFO - [+] Got a connection from ('127.0.0.1', 43432)
+2023-07-07 14:41:04,574 - INFO - Connected (version 2.0, client paramiko_3.2.0)
+2023-07-07 14:41:04,827 - INFO - Auth rejected (publickey).
+2023-07-07 14:41:04,828 - INFO - Auth granted (password).
+2023-07-07 14:41:04,829 - INFO - [+] Authenticated!
 ls
-ld
+cd bin
 ls
-po
+2023-07-07 14:50:34,127 - INFO - [+] Listening for connection...
+2023-07-07 14:50:37,869 - INFO - [+] Got a connection from ('127.0.0.1', 47182)
+2023-07-07 14:50:37,870 - INFO - Connected (version 2.0, client paramiko_3.2.0)
+2023-07-07 14:50:38,113 - INFO - Auth rejected (publickey).
+2023-07-07 14:50:38,114 - INFO - Auth granted (password).
+2023-07-07 14:50:38,115 - INFO - [+] Authenticated!
 ls
-lf
+cd bin 
+ls
+2023-07-07 14:52:35,134 - INFO - [+] Listening for connection...
+2023-07-07 14:52:40,061 - INFO - [+] Got a connection from ('127.0.0.1', 56936)
+2023-07-07 14:52:40,062 - INFO - Connected (version 2.0, client paramiko_3.2.0)
+2023-07-07 14:52:40,305 - INFO - Auth rejected (publickey).
+2023-07-07 14:52:40,306 - INFO - Auth granted (password).
+2023-07-07 14:52:40,307 - INFO - [+] Authenticated!
+ls
+cd bin 
+ls
