@@ -1090,3 +1090,10 @@ ls
 2023-07-10 14:40:14,658 - INFO - Successful Login - User: user - Password: pass - ID: 544957
 2023-07-10 14:40:14,658 - INFO - Auth granted (password).
 2023-07-10 14:40:14,710 - INFO - [+] Authenticated!
+2023-07-10 14:56:33,825 - INFO - [+] Listening for connection...
+2023-07-10 14:56:45,118 - INFO - [+] Got a connection from ('127.0.0.1', 39684)
+2023-07-10 14:56:45,119 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-10 14:56:46,770 - INFO - Auth rejected (none).
+2023-07-10 14:56:49,216 - INFO - Successful Login - User: user - Password: pass - ID: 935458
+2023-07-10 14:56:49,216 - INFO - Auth granted (password).
+2023-07-10 14:56:49,261 - INFO - [+] Authenticated!
