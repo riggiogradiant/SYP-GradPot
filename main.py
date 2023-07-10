@@ -11,11 +11,7 @@ if "SSH" in ruta_llamada:
     # Obtener el input del argumento de línea de comandos
     cmd_from_client = sys.argv[1]
 
-    #Si es un comando del tipo cd
-    if cmd_from_client.startswith("cd"):
-        function.cd_dealer(cmd_from_client)
-
-    else: function.execute_cmd(cmd_from_client)
+    function.execute_cmd(cmd_from_client)
 
 # Comprobar si las peticiones vienen de Modbus
 elif "Modbus" in ruta_llamada:

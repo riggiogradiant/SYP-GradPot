@@ -41,15 +41,27 @@ class Server(paramiko.ServerInterface):
         return paramiko.OPEN_FAILED_ADMINISTRATIVELY_PROHIBITED
 
     
+    # def check_auth_password(self, username, password):
+    #     usernames, passwords = parse_file('./Server_Files/INFO_SERVER/etc/userdb.txt')
+    
+    #     if username in usernames and password in passwords:
+    #         if usernames.index(username) == passwords.index(password):
+    #             return paramiko.AUTH_SUCCESSFUL
+
+    #     return paramiko.AUTH_FAILED
+
     def check_auth_password(self, username, password):
         usernames, passwords = parse_file('./Server_Files/INFO_SERVER/etc/userdb.txt')
-    
+
         if username in usernames and password in passwords:
             if usernames.index(username) == passwords.index(password):
+                # Registro de información (info log)
+                logging.info("Succesfull Login - User: %s - Password: %s", username, password)
                 return paramiko.AUTH_SUCCESSFUL
 
+        # Registro de información (info log)
+        logging.info("Failed Login - User: %s - Password: %s", username, password)
         return paramiko.AUTH_FAILED
-
     
 
 if __name__ == '__main__':
