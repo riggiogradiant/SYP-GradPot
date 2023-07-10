@@ -1,5 +1,6 @@
 import subprocess
 import os
+import datetime
 
 #PATHS RELATIVOS
 LOG_FILE = os.getcwd()
@@ -7,6 +8,9 @@ LOG_FILE = LOG_FILE + '/Server_Files/server_log.txt'
 
 OUTPUT_FILE = os.getcwd()
 OUTPUT_FILE = OUTPUT_FILE + '/Server_Files/output.txt'
+
+# BASE_DIRECTORY = os.getcwd()
+# BASE_DIRECTORY = BASE_DIRECTORY +'/Server_Files/INFO_SERVER'
 
 def replace_prefix(output, dir):
     replacement = '/root'
@@ -16,16 +20,15 @@ def replace_prefix(output, dir):
         output = replacement
     return output
 
-def cmd_cd(cmd_from_client):
-    print('DIR Changed')
-    with open(LOG_FILE, 'a') as log_file:
-        log_file.write(cmd_from_client + '\n')
 
+# Retorna True si el working dir es valido y false si no lo es
+def valid_path(Base_Dir, Working_Dir):
+    count1 = Base_Dir.count('/')
+    count2 = Working_Dir.count('/')
+    
+    return count1 <= count2
 
-# Con esta funcion registramos todos los comandos cd despues de la ultima autenticación
 def dir_to_change(log_file):
-
-    print('DENTRO DEL DIR TO CHANGE')
     cd_commands = []
     authenticated_found = False
 
@@ -36,30 +39,33 @@ def dir_to_change(log_file):
                 cd_commands.clear()  # Limpiar la lista de comandos 'cd' anteriores
                 continue
 
-            if authenticated_found and line.strip().startswith('cd'):
-                cd_commands.append(line.strip())
+            if authenticated_found and '- CMD - cd' in line:
+                command_parts = line.split('- CMD - cd')
+                if len(command_parts) == 2:
+                    directory = command_parts[1].strip()
+                    cd_commands.append(directory)
 
     if cd_commands:
-        directory_list = []
-        for cd_command in cd_commands:
-            directory = cd_command[3:].strip()  # Obtener el directorio después de 'cd'
-            directory_list.append(directory)
-
-        directories = '/'.join(directory_list)  # Unir los directorios con '/'
-        print('DIR to CHANGE FUNCTION. DIRs: ' + directories)
-
+        directories = '/'.join(cd_commands)
+        print('DIR to CHANGE FUNCTION. DIRs:', directories)
         return directories
 
     return None
 
 
-# Función para ejecutar comandos que no sean ni cd ni pwd
+
+# Función de ejecución de los comandos
 def execute_cmd(cmd_from_client):
+
     WORKING_DIRECTORY = os.getcwd()
     WORKING_DIRECTORY = WORKING_DIRECTORY +'/Server_Files/INFO_SERVER'
 
+    #Guarda el comando recibido con su timestamp en el LOG-FILE
+    timestamp = timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S,%f")[:-3]
+    log_to_enter= f"{timestamp} - CMD - {cmd_from_client}\n"
+
     with open(LOG_FILE, 'a') as log_file:
-        log_file.write(cmd_from_client + '\n')
+        log_file.write(log_to_enter)
 
     WORKING_DIRECTORY, directory = dir_dealer(cmd_from_client)
     os.chdir(WORKING_DIRECTORY)
@@ -84,16 +90,18 @@ def execute_cmd(cmd_from_client):
 
     print(output)
 
-#Función para lidiar con las peticiones cd
 
 
+# Función que nos devuelve el directorio completo sobre el que estamos trabajando
 def dir_dealer(cmd_from_client):
     WORKING_DIRECTORY = os.getcwd()
     WORKING_DIRECTORY = WORKING_DIRECTORY +'/Server_Files/INFO_SERVER'
     
     directory = dir_to_change(LOG_FILE)
 
-    #print('-+-+-+-+-+-CMD_FROM_CLIENT:' +cmd_from_client)
+    print(directory)
+
+    print('-+-+-+-+-+-CMD_FROM_CLIENT:' +cmd_from_client)
 
     if directory != None:
         #print('Directory dentro del cd_dealer' + directory)
@@ -171,3 +179,8 @@ def cd_dealer(cmd_from_client):
     # print('Despues del cd ..')
 
     return WORKING_DIRECTORY
+
+def cmd_cd(cmd_from_client):
+    print('DIR Changed')
+    with open(LOG_FILE, 'a') as log_file:
+        log_file.write(cmd_from_client + '\n')
