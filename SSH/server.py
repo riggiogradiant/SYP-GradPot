@@ -88,6 +88,11 @@ if __name__ == '__main__':
 
     #Espera a que el cliente abra un canal ssh
     chan = bhSession.accept(20)
+    # try:
+    #     chan.get_pty()
+    # except paramiko.SSHException as e:
+    #     print("Error al obtener el PTY:", str(e))
+
 
     if chan is None:
         print('*** No Channel.')
