@@ -1425,3 +1425,512 @@ ls
 2023-07-11 14:31:05,763 - INFO - Succesfull Login - User: user - Password: pass - ID: 225947
 2023-07-11 14:31:05,763 - INFO - Auth granted (password).
 2023-07-11 14:31:05,764 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 07:28:35,415 - INFO - [+] Listening for connection...
+2023-07-12 07:28:37,972 - INFO - [+] Got a connection from ('127.0.0.1', 60026)
+2023-07-12 07:28:37,979 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 07:28:38,055 - INFO - Auth rejected (none).
+2023-07-12 07:28:44,936 - INFO - Succesfull Login - User: user - Password: pass - ID: 240767
+2023-07-12 07:28:44,936 - INFO - Auth granted (password).
+2023-07-12 07:28:44,938 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 07:29:16,025 - INFO - [+] Listening for connection...
+2023-07-12 07:29:27,595 - INFO - [+] Got a connection from ('127.0.0.1', 55860)
+2023-07-12 07:29:27,599 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 07:29:27,615 - INFO - Auth rejected (none).
+2023-07-12 07:29:29,526 - INFO - Succesfull Login - User: user - Password: pass - ID: 736139
+2023-07-12 07:29:29,526 - INFO - Auth granted (password).
+2023-07-12 07:29:29,527 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 07:32:53,994 - INFO - [+] Listening for connection...
+2023-07-12 07:33:04,748 - INFO - [+] Got a connection from ('127.0.0.1', 36904)
+2023-07-12 07:33:04,755 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 07:33:04,769 - INFO - Auth rejected (none).
+2023-07-12 07:33:09,638 - INFO - Succesfull Login - User: user - Password: pass - ID: 457012
+2023-07-12 07:33:09,639 - INFO - Auth granted (password).
+2023-07-12 07:33:09,640 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:01:05,899 - INFO - [+] Listening for connection...
+2023-07-12 08:01:55,105 - INFO - [+] Got a connection from ('127.0.0.1', 37932)
+2023-07-12 08:01:55,109 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:01:55,121 - INFO - Auth rejected (none).
+2023-07-12 08:01:58,440 - INFO - Succesfull Login - User: user - Password: pass - ID: 809823
+2023-07-12 08:01:58,440 - INFO - Auth granted (password).
+2023-07-12 08:01:58,442 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:03:34,825 - INFO - [+] Listening for connection...
+2023-07-12 08:03:36,926 - INFO - [+] Got a connection from ('127.0.0.1', 45618)
+2023-07-12 08:03:36,930 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:03:36,942 - INFO - Auth rejected (none).
+2023-07-12 08:03:39,264 - INFO - Succesfull Login - User: user - Password: pass - ID: 347578
+2023-07-12 08:03:39,264 - INFO - Auth granted (password).
+2023-07-12 08:03:39,265 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:20:33,886 - INFO - [+] Listening for connection...
+2023-07-12 08:20:39,716 - INFO - [+] Got a connection from ('127.0.0.1', 55392)
+2023-07-12 08:20:39,722 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:20:39,736 - INFO - Auth rejected (none).
+2023-07-12 08:20:42,159 - INFO - Succesfull Login - User: user - Password: pass - ID: 592591
+2023-07-12 08:20:42,159 - INFO - Auth granted (password).
+2023-07-12 08:20:42,160 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:22:27,444 - INFO - [+] Listening for connection...
+2023-07-12 08:22:28,827 - INFO - [+] Got a connection from ('127.0.0.1', 58332)
+2023-07-12 08:22:28,832 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:22:28,845 - INFO - Auth rejected (none).
+2023-07-12 08:22:30,662 - INFO - Succesfull Login - User: user - Password: pass - ID: 824818
+2023-07-12 08:22:30,662 - INFO - Auth granted (password).
+2023-07-12 08:22:30,663 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:23:33,621 - INFO - [+] Listening for connection...
+2023-07-12 08:23:35,787 - INFO - [+] Got a connection from ('127.0.0.1', 53232)
+2023-07-12 08:23:35,793 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:23:35,805 - INFO - Auth rejected (none).
+2023-07-12 08:23:37,742 - INFO - Succesfull Login - User: user - Password: pass - ID: 963485
+2023-07-12 08:23:37,742 - INFO - Auth granted (password).
+2023-07-12 08:23:37,742 - ERROR - Unknown exception: can only concatenate str (not "int") to str
+2023-07-12 08:23:37,743 - ERROR - Traceback (most recent call last):
+2023-07-12 08:23:37,743 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 08:23:37,743 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 08:23:37,743 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2936, in _parse_channel_open
+2023-07-12 08:23:37,743 - ERROR -     reason = self.server_object.check_channel_request(
+2023-07-12 08:23:37,743 - ERROR -   File "/home/criggio/OWN_HONEYPOT/SSH/server_try_ssh.py", line 229, in check_channel_request
+2023-07-12 08:23:37,743 - ERROR -     print('++++EL CHAN ID ES ++++: ' + chanid)
+2023-07-12 08:23:37,743 - ERROR - TypeError: can only concatenate str (not "int") to str
+2023-07-12 08:23:37,743 - ERROR - 
+2023-07-12 08:24:09,340 - INFO - [+] Listening for connection...
+2023-07-12 08:24:11,067 - INFO - [+] Got a connection from ('127.0.0.1', 47050)
+2023-07-12 08:24:11,071 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:24:11,085 - INFO - Auth rejected (none).
+2023-07-12 08:24:12,709 - INFO - Succesfull Login - User: user - Password: pass - ID: 540309
+2023-07-12 08:24:12,709 - INFO - Auth granted (password).
+2023-07-12 08:24:12,710 - ERROR - Unknown exception: can only concatenate str (not "int") to str
+2023-07-12 08:24:12,711 - ERROR - Traceback (most recent call last):
+2023-07-12 08:24:12,711 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 08:24:12,711 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 08:24:12,711 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2936, in _parse_channel_open
+2023-07-12 08:24:12,711 - ERROR -     reason = self.server_object.check_channel_request(
+2023-07-12 08:24:12,711 - ERROR -   File "/home/criggio/OWN_HONEYPOT/SSH/server_try_ssh.py", line 229, in check_channel_request
+2023-07-12 08:24:12,711 - ERROR -     print('++++EL CHAN ID ES ++++: ' + chanid)
+2023-07-12 08:24:12,711 - ERROR - TypeError: can only concatenate str (not "int") to str
+2023-07-12 08:24:12,711 - ERROR - 
+2023-07-12 08:24:36,215 - INFO - [+] Listening for connection...
+2023-07-12 08:24:37,443 - INFO - [+] Got a connection from ('127.0.0.1', 38838)
+2023-07-12 08:24:37,448 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:24:37,462 - INFO - Auth rejected (none).
+2023-07-12 08:24:40,053 - INFO - Succesfull Login - User: user - Password: pass - ID: 117115
+2023-07-12 08:24:40,053 - INFO - Auth granted (password).
+2023-07-12 08:24:40,055 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:25:09,817 - INFO - [+] Listening for connection...
+2023-07-12 08:25:11,562 - INFO - [+] Got a connection from ('127.0.0.1', 56706)
+2023-07-12 08:25:11,568 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:25:11,582 - INFO - Auth rejected (none).
+2023-07-12 08:25:14,461 - INFO - Succesfull Login - User: user - Password: pass - ID: 551258
+2023-07-12 08:25:14,461 - INFO - Auth granted (password).
+2023-07-12 08:25:14,462 - ERROR - Unknown exception: can only concatenate str (not "int") to str
+2023-07-12 08:25:14,462 - ERROR - Traceback (most recent call last):
+2023-07-12 08:25:14,462 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 08:25:14,462 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 08:25:14,462 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2936, in _parse_channel_open
+2023-07-12 08:25:14,463 - ERROR -     reason = self.server_object.check_channel_request(
+2023-07-12 08:25:14,463 - ERROR -   File "/home/criggio/OWN_HONEYPOT/SSH/server_try_ssh.py", line 229, in check_channel_request
+2023-07-12 08:25:14,463 - ERROR -     print('++++EL CHAN ID ES ++++: ' + chanid)
+2023-07-12 08:25:14,463 - ERROR - TypeError: can only concatenate str (not "int") to str
+2023-07-12 08:25:14,463 - ERROR - 
+2023-07-12 08:28:53,112 - INFO - [+] Listening for connection...
+2023-07-12 08:28:55,085 - INFO - [+] Got a connection from ('127.0.0.1', 44890)
+2023-07-12 08:28:55,091 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:28:55,105 - INFO - Auth rejected (none).
+2023-07-12 08:28:57,584 - INFO - Succesfull Login - User: user - Password: pass - ID: 128861
+2023-07-12 08:28:57,584 - INFO - Auth granted (password).
+2023-07-12 08:28:57,586 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:29:42,110 - INFO - [+] Listening for connection...
+2023-07-12 08:29:44,486 - INFO - [+] Got a connection from ('127.0.0.1', 45602)
+2023-07-12 08:29:44,492 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:29:44,505 - INFO - Auth rejected (none).
+2023-07-12 08:29:46,545 - INFO - Succesfull Login - User: user - Password: pass - ID: 878741
+2023-07-12 08:29:46,545 - INFO - Auth granted (password).
+2023-07-12 08:29:46,546 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:30:44,213 - INFO - [+] Listening for connection...
+2023-07-12 08:30:46,016 - INFO - [+] Got a connection from ('127.0.0.1', 37796)
+2023-07-12 08:30:46,021 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:30:46,035 - INFO - Auth rejected (none).
+2023-07-12 08:30:48,154 - INFO - Succesfull Login - User: user - Password: pass - ID: 303168
+2023-07-12 08:30:48,154 - INFO - Auth granted (password).
+2023-07-12 08:30:48,155 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:32:37,207 - INFO - [+] Listening for connection...
+2023-07-12 08:32:38,914 - INFO - [+] Got a connection from ('127.0.0.1', 57128)
+2023-07-12 08:32:38,919 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:32:38,933 - INFO - Auth rejected (none).
+2023-07-12 08:32:41,075 - INFO - Succesfull Login - User: user - Password: pass - ID: 579376
+2023-07-12 08:32:41,075 - INFO - Auth granted (password).
+2023-07-12 08:32:41,077 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:33:39,136 - INFO - [+] Listening for connection...
+2023-07-12 08:33:40,793 - INFO - [+] Got a connection from ('127.0.0.1', 44602)
+2023-07-12 08:33:40,798 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:33:40,812 - INFO - Auth rejected (none).
+2023-07-12 08:33:42,491 - INFO - Succesfull Login - User: user - Password: pass - ID: 814354
+2023-07-12 08:33:42,491 - INFO - Auth granted (password).
+2023-07-12 08:33:42,493 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:33:42,494 - INFO - [+] Authenticated!
+2023-07-12 08:49:34,647 - INFO - [+] Listening for connection...
+2023-07-12 08:49:37,046 - INFO - [+] Got a connection from ('127.0.0.1', 34218)
+2023-07-12 08:49:37,052 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:49:37,066 - INFO - Auth rejected (none).
+2023-07-12 08:49:39,313 - INFO - Succesfull Login - User: user - Password: pass - ID: 642897
+2023-07-12 08:49:39,313 - INFO - Auth granted (password).
+2023-07-12 08:49:39,314 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:49:39,315 - INFO - [+] Authenticated!
+2023-07-12 08:52:52,183 - INFO - [+] Listening for connection...
+2023-07-12 08:52:58,239 - INFO - [+] Got a connection from ('127.0.0.1', 58206)
+2023-07-12 08:52:58,245 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:52:58,257 - INFO - Auth rejected (none).
+2023-07-12 08:53:00,354 - INFO - Succesfull Login - User: user - Password: pass - ID: 402910
+2023-07-12 08:53:00,354 - INFO - Auth granted (password).
+2023-07-12 08:53:28,695 - INFO - [+] Listening for connection...
+2023-07-12 08:53:30,991 - INFO - [+] Got a connection from ('127.0.0.1', 44342)
+2023-07-12 08:53:30,997 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 08:53:31,010 - INFO - Auth rejected (none).
+2023-07-12 08:53:32,890 - INFO - Succesfull Login - User: user - Password: pass - ID: 174270
+2023-07-12 08:53:32,890 - INFO - Auth granted (password).
+2023-07-12 08:53:32,891 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 08:53:32,892 - INFO - [+] Authenticated!
+2023-07-12 09:05:30,643 - INFO - [+] Listening for connection...
+2023-07-12 09:05:33,573 - INFO - [+] Got a connection from ('127.0.0.1', 58198)
+2023-07-12 09:05:33,578 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:05:33,594 - INFO - Auth rejected (none).
+2023-07-12 09:06:01,629 - INFO - [+] Listening for connection...
+2023-07-12 09:06:03,613 - INFO - [+] Got a connection from ('127.0.0.1', 50046)
+2023-07-12 09:06:03,618 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:06:03,632 - INFO - Auth rejected (none).
+2023-07-12 09:06:06,047 - INFO - Succesfull Login - User: user - Password: pass - ID: 819477
+2023-07-12 09:06:06,047 - INFO - Auth granted (password).
+2023-07-12 09:06:06,054 - INFO - Disconnect (code 11): disconnected by user
+2023-07-12 09:07:36,935 - INFO - [+] Listening for connection...
+2023-07-12 09:07:38,989 - INFO - [+] Got a connection from ('127.0.0.1', 45580)
+2023-07-12 09:07:38,994 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:07:39,008 - INFO - Auth rejected (none).
+2023-07-12 09:07:40,416 - INFO - Succesfull Login - User: user - Password: pass - ID: 212800
+2023-07-12 09:07:40,416 - INFO - Auth granted (password).
+2023-07-12 09:07:40,421 - INFO - Disconnect (code 11): disconnected by user
+2023-07-12 09:08:50,527 - INFO - [+] Listening for connection...
+2023-07-12 09:08:52,326 - INFO - [+] Got a connection from ('127.0.0.1', 52974)
+2023-07-12 09:08:52,331 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:08:52,345 - INFO - Auth rejected (none).
+2023-07-12 09:08:55,008 - INFO - Succesfull Login - User: user - Password: pass - ID: 594540
+2023-07-12 09:08:55,008 - INFO - Auth granted (password).
+2023-07-12 09:08:55,010 - INFO - [+] Authenticated!
+2023-07-12 09:09:18,950 - INFO - [+] Listening for connection...
+2023-07-12 09:09:22,589 - INFO - [+] Got a connection from ('127.0.0.1', 59692)
+2023-07-12 09:09:22,596 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:09:22,608 - INFO - Auth rejected (none).
+2023-07-12 09:09:25,192 - INFO - Succesfull Login - User: user - Password: pass - ID: 856110
+2023-07-12 09:09:25,192 - INFO - Auth granted (password).
+2023-07-12 09:09:25,194 - INFO - [+] Authenticated!
+2023-07-12 09:10:50,785 - INFO - [+] Listening for connection...
+2023-07-12 09:10:52,216 - INFO - [+] Got a connection from ('127.0.0.1', 46646)
+2023-07-12 09:10:52,224 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:10:52,238 - INFO - Auth rejected (none).
+2023-07-12 09:10:55,024 - INFO - Succesfull Login - User: user - Password: pass - ID: 296277
+2023-07-12 09:10:55,024 - INFO - Auth granted (password).
+2023-07-12 09:10:55,026 - INFO - [+] Authenticated!
+2023-07-12 09:11:37,085 - INFO - [+] Listening for connection...
+2023-07-12 09:11:39,510 - INFO - [+] Got a connection from ('127.0.0.1', 38664)
+2023-07-12 09:11:39,516 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:11:39,529 - INFO - Auth rejected (none).
+2023-07-12 09:11:41,032 - INFO - Succesfull Login - User: user - Password: pass - ID: 236421
+2023-07-12 09:11:41,032 - INFO - Auth granted (password).
+2023-07-12 09:11:41,034 - INFO - [+] Authenticated!
+2023-07-12 09:32:01,376 - INFO - [+] Listening for connection...
+2023-07-12 09:32:04,636 - INFO - [+] Got a connection from ('127.0.0.1', 52856)
+2023-07-12 09:32:04,642 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:32:04,656 - INFO - Auth rejected (none).
+2023-07-12 09:32:06,462 - INFO - Succesfull Login - User: user - Password: pass - ID: 103916
+2023-07-12 09:32:06,462 - INFO - Auth granted (password).
+2023-07-12 09:32:06,464 - INFO - [+] Authenticated!
+2023-07-12 09:33:05,587 - INFO - [+] Listening for connection...
+2023-07-12 09:33:08,421 - INFO - [+] Got a connection from ('127.0.0.1', 47386)
+2023-07-12 09:33:08,428 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:33:08,441 - INFO - Auth rejected (none).
+2023-07-12 09:33:10,070 - INFO - Succesfull Login - User: user - Password: pass - ID: 197489
+2023-07-12 09:33:10,070 - INFO - Auth granted (password).
+2023-07-12 09:33:10,072 - INFO - [+] Authenticated!
+2023-07-12 09:33:32,161 - INFO - [+] Listening for connection...
+2023-07-12 09:33:33,956 - INFO - [+] Got a connection from ('127.0.0.1', 60892)
+2023-07-12 09:33:33,960 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:33:33,973 - INFO - Auth rejected (none).
+2023-07-12 09:33:35,430 - INFO - Succesfull Login - User: user - Password: pass - ID: 160893
+2023-07-12 09:33:35,430 - INFO - Auth granted (password).
+2023-07-12 09:33:35,432 - INFO - [+] Authenticated!
+2023-07-12 09:33:51,505 - INFO - [+] Listening for connection...
+2023-07-12 09:33:53,923 - INFO - [+] Got a connection from ('127.0.0.1', 51466)
+2023-07-12 09:33:53,930 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:33:53,944 - INFO - Auth rejected (none).
+2023-07-12 09:33:56,534 - INFO - Succesfull Login - User: user - Password: pass - ID: 912992
+2023-07-12 09:33:56,534 - INFO - Auth granted (password).
+2023-07-12 09:33:56,536 - INFO - [+] Authenticated!
+2023-07-12 09:34:35,782 - INFO - [+] Listening for connection...
+2023-07-12 09:34:37,469 - INFO - [+] Got a connection from ('127.0.0.1', 56960)
+2023-07-12 09:34:37,473 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:34:37,487 - INFO - Auth rejected (none).
+2023-07-12 09:34:38,862 - INFO - Succesfull Login - User: user - Password: pass - ID: 588180
+2023-07-12 09:34:38,862 - INFO - Auth granted (password).
+2023-07-12 09:34:38,863 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 09:37:06,341 - INFO - [+] Listening for connection...
+2023-07-12 09:37:12,207 - INFO - [+] Got a connection from ('127.0.0.1', 39178)
+2023-07-12 09:37:12,213 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:37:12,226 - INFO - Auth rejected (none).
+2023-07-12 09:37:14,433 - INFO - Succesfull Login - User: user - Password: pass - ID: 826296
+2023-07-12 09:37:14,433 - INFO - Auth granted (password).
+2023-07-12 09:37:14,435 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 09:37:14,435 - INFO - [+] Authenticated!
+2023-07-12 09:37:14,458 - CMD - 
+2023-07-12 09:38:32,956 - INFO - [+] Listening for connection...
+2023-07-12 09:38:34,705 - INFO - [+] Got a connection from ('127.0.0.1', 42110)
+2023-07-12 09:38:34,711 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:38:34,724 - INFO - Auth rejected (none).
+2023-07-12 09:38:36,051 - INFO - Succesfull Login - User: user - Password: pass - ID: 595234
+2023-07-12 09:38:36,051 - INFO - Auth granted (password).
+2023-07-12 09:38:36,053 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 09:38:36,053 - INFO - [+] Authenticated!
+2023-07-12 09:38:36,076 - CMD - 
+2023-07-12 09:51:36,375 - INFO - [+] Listening for connection...
+2023-07-12 09:51:42,234 - INFO - [+] Got a connection from ('127.0.0.1', 49852)
+2023-07-12 09:51:42,240 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:51:42,253 - INFO - Auth rejected (none).
+2023-07-12 09:51:44,532 - INFO - Succesfull Login - User: user - Password: pass - ID: 410557
+2023-07-12 09:51:44,532 - INFO - Auth granted (password).
+2023-07-12 09:51:44,534 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 09:51:44,534 - INFO - [+] Authenticated!
+2023-07-12 09:51:44,557 - CMD - 
+2023-07-12 09:56:34,021 - INFO - [+] Listening for connection...
+2023-07-12 09:56:35,879 - INFO - [+] Got a connection from ('127.0.0.1', 49274)
+2023-07-12 09:56:35,886 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:56:35,899 - INFO - Auth rejected (none).
+2023-07-12 09:56:37,634 - INFO - Succesfull Login - User: user - Password: pass - ID: 380044
+2023-07-12 09:56:37,634 - INFO - Auth granted (password).
+2023-07-12 09:56:37,636 - INFO - [+] Authenticated!
+2023-07-12 09:56:37,658 - CMD - 
+2023-07-12 09:59:18,879 - INFO - [+] Listening for connection...
+2023-07-12 09:59:26,146 - INFO - [+] Got a connection from ('127.0.0.1', 37002)
+2023-07-12 09:59:26,151 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 09:59:26,164 - INFO - Auth rejected (none).
+2023-07-12 09:59:33,211 - INFO - Succesfull Login - User: user - Password: pass - ID: 162101
+2023-07-12 09:59:33,211 - INFO - Auth granted (password).
+2023-07-12 09:59:33,213 - INFO - [+] Authenticated!
+2023-07-12 09:59:33,233 - CMD - 
+2023-07-12 10:01:00,639 - INFO - [+] Listening for connection...
+2023-07-12 10:01:04,651 - INFO - [+] Got a connection from ('127.0.0.1', 43424)
+2023-07-12 10:01:04,656 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:01:04,671 - INFO - Auth rejected (none).
+2023-07-12 10:01:24,671 - INFO - *** No Channel.
+2023-07-12 10:03:23,317 - INFO - [+] Listening for connection...
+2023-07-12 10:03:27,538 - INFO - [+] Got a connection from ('127.0.0.1', 50678)
+2023-07-12 10:03:27,543 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:03:27,556 - INFO - Auth rejected (none).
+2023-07-12 10:03:32,220 - INFO - Succesfull Login - User: user - Password: pass - ID: 343969
+2023-07-12 10:03:32,220 - INFO - Auth granted (password).
+2023-07-12 10:03:32,222 - INFO - [+] Authenticated!
+2023-07-12 10:03:32,242 - CMD - 
+2023-07-12 10:27:43,893 - INFO - [+] Listening for connection...
+2023-07-12 10:27:45,404 - INFO - [+] Got a connection from ('127.0.0.1', 57366)
+2023-07-12 10:27:45,412 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:27:45,475 - INFO - Auth rejected (none).
+2023-07-12 10:27:49,774 - INFO - Succesfull Login - User: user - Password: pass - ID: 450287
+2023-07-12 10:27:49,774 - INFO - Auth granted (password).
+2023-07-12 10:27:49,776 - INFO - [+] Authenticated!
+2023-07-12 10:27:49,798 - CMD - 
+2023-07-12 10:36:11,571 - INFO - [+] Listening for connection...
+2023-07-12 10:36:13,882 - INFO - [+] Got a connection from ('127.0.0.1', 52006)
+2023-07-12 10:36:13,888 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:36:13,903 - INFO - Auth rejected (none).
+2023-07-12 10:36:15,330 - INFO - Succesfull Login - User: user - Password: pass - ID: 213074
+2023-07-12 10:36:15,330 - INFO - Auth granted (password).
+2023-07-12 10:51:23,236 - INFO - [+] Listening for connection...
+2023-07-12 10:51:24,996 - INFO - [+] Got a connection from ('127.0.0.1', 54102)
+2023-07-12 10:51:25,001 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:51:25,016 - INFO - Auth rejected (none).
+2023-07-12 10:51:27,053 - INFO - Succesfull Login - User: user - Password: pass - ID: 411982
+2023-07-12 10:51:27,053 - INFO - Auth granted (password).
+2023-07-12 10:51:27,054 - ERROR - Unknown exception: name 'request' is not defined
+2023-07-12 10:51:27,057 - ERROR - Traceback (most recent call last):
+2023-07-12 10:51:27,058 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 10:51:27,058 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 10:51:27,058 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2936, in _parse_channel_open
+2023-07-12 10:51:27,058 - ERROR -     reason = self.server_object.check_channel_request(
+2023-07-12 10:51:27,058 - ERROR -   File "/home/criggio/OWN_HONEYPOT/SSH/server_try_ssh.py", line 237, in check_channel_request
+2023-07-12 10:51:27,058 - ERROR -     if 'pty' in request.get_extra_info('open_args'):
+2023-07-12 10:51:27,058 - ERROR - NameError: name 'request' is not defined
+2023-07-12 10:51:27,058 - ERROR - 
+2023-07-12 10:51:48,131 - INFO - [+] Listening for connection...
+2023-07-12 10:51:52,988 - INFO - [+] Got a connection from ('127.0.0.1', 57858)
+2023-07-12 10:51:52,995 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:51:53,011 - INFO - Auth rejected (none).
+2023-07-12 10:51:56,655 - INFO - Succesfull Login - User: user - Password: pass - ID: 136016
+2023-07-12 10:51:56,655 - INFO - Auth granted (password).
+2023-07-12 10:51:56,656 - ERROR - Unknown exception: name 'request' is not defined
+2023-07-12 10:51:56,657 - ERROR - Traceback (most recent call last):
+2023-07-12 10:51:56,657 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 10:51:56,657 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 10:51:56,657 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2936, in _parse_channel_open
+2023-07-12 10:51:56,657 - ERROR -     reason = self.server_object.check_channel_request(
+2023-07-12 10:51:56,657 - ERROR -   File "/home/criggio/OWN_HONEYPOT/SSH/server_try_ssh.py", line 237, in check_channel_request
+2023-07-12 10:51:56,657 - ERROR -     if 'pty' in request.get_extra_info('open_args'):
+2023-07-12 10:51:56,657 - ERROR - NameError: name 'request' is not defined
+2023-07-12 10:51:56,657 - ERROR - 
+2023-07-12 10:51:56,658 - INFO - *** No Channel.
+2023-07-12 10:57:08,757 - INFO - [+] Listening for connection...
+2023-07-12 10:57:10,147 - INFO - [+] Got a connection from ('127.0.0.1', 40518)
+2023-07-12 10:57:10,153 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:57:10,166 - INFO - Auth rejected (none).
+2023-07-12 10:57:11,805 - INFO - Succesfull Login - User: user - Password: pass - ID: 399586
+2023-07-12 10:57:11,806 - INFO - Auth granted (password).
+2023-07-12 10:57:11,806 - ERROR - Unknown exception: required argument is not an integer
+2023-07-12 10:57:11,809 - ERROR - Traceback (most recent call last):
+2023-07-12 10:57:11,809 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2159, in run
+2023-07-12 10:57:11,809 - ERROR -     self._handler_table[ptype](m)
+2023-07-12 10:57:11,809 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/transport.py", line 2949, in _parse_channel_open
+2023-07-12 10:57:11,809 - ERROR -     msg.add_int(reason)
+2023-07-12 10:57:11,809 - ERROR -   File "/home/criggio/.local/lib/python3.10/site-packages/paramiko/message.py", line 236, in add_int
+2023-07-12 10:57:11,809 - ERROR -     self.packet.write(struct.pack(">I", n))
+2023-07-12 10:57:11,809 - ERROR - struct.error: required argument is not an integer
+2023-07-12 10:57:11,809 - ERROR - 
+2023-07-12 10:57:11,809 - INFO - *** No Channel.
+2023-07-12 10:57:37,200 - INFO - [+] Listening for connection...
+2023-07-12 10:57:39,699 - INFO - [+] Got a connection from ('127.0.0.1', 37410)
+2023-07-12 10:57:39,705 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 10:57:39,719 - INFO - Auth rejected (none).
+2023-07-12 10:57:41,461 - INFO - Succesfull Login - User: user - Password: pass - ID: 543920
+2023-07-12 10:57:41,461 - INFO - Auth granted (password).
+2023-07-12 10:57:41,463 - INFO - [+] Authenticated!
+2023-07-12 10:57:41,482 - CMD - 
+2023-07-12 11:00:59,980 - INFO - [+] Listening for connection...
+2023-07-12 11:01:05,308 - INFO - [+] Got a connection from ('127.0.0.1', 50320)
+2023-07-12 11:01:05,314 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 11:01:05,328 - INFO - Auth rejected (none).
+2023-07-12 11:01:06,981 - INFO - Succesfull Login - User: user - Password: pass - ID: 585018
+2023-07-12 11:01:06,981 - INFO - Auth granted (password).
+2023-07-12 12:20:58,995 - INFO - [+] Listening for connection...
+2023-07-12 12:21:00,635 - INFO - [+] Got a connection from ('127.0.0.1', 57008)
+2023-07-12 12:21:00,640 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:21:00,654 - INFO - Auth rejected (none).
+2023-07-12 12:21:02,900 - INFO - Succesfull Login - User: user - Password: pass - ID: 192855
+2023-07-12 12:21:02,900 - INFO - Auth granted (password).
+2023-07-12 12:21:24,735 - INFO - [+] Listening for connection...
+2023-07-12 12:21:26,858 - INFO - [+] Got a connection from ('127.0.0.1', 48658)
+2023-07-12 12:21:26,865 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:21:26,879 - INFO - Auth rejected (none).
+2023-07-12 12:21:28,476 - INFO - Succesfull Login - User: user - Password: pass - ID: 416255
+2023-07-12 12:21:28,476 - INFO - Auth granted (password).
+2023-07-12 12:21:28,478 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:22:10,415 - INFO - [+] Listening for connection...
+2023-07-12 12:22:13,626 - INFO - [+] Got a connection from ('127.0.0.1', 43870)
+2023-07-12 12:22:13,632 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:22:13,645 - INFO - Auth rejected (none).
+2023-07-12 12:22:28,785 - INFO - [+] Listening for connection...
+2023-07-12 12:22:30,522 - INFO - [+] Got a connection from ('127.0.0.1', 52764)
+2023-07-12 12:22:30,528 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:22:30,543 - INFO - Auth rejected (none).
+2023-07-12 12:22:31,940 - INFO - Succesfull Login - User: user - Password: pass - ID: 925860
+2023-07-12 12:22:31,940 - INFO - Auth granted (password).
+2023-07-12 12:22:31,942 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:28:09,152 - INFO - [+] Listening for connection...
+2023-07-12 12:28:10,925 - INFO - [+] Got a connection from ('127.0.0.1', 37040)
+2023-07-12 12:28:10,930 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:28:10,944 - INFO - Auth rejected (none).
+2023-07-12 12:28:12,310 - INFO - Succesfull Login - User: user - Password: pass - ID: 550047
+2023-07-12 12:28:12,310 - INFO - Auth granted (password).
+2023-07-12 12:28:12,314 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:28:51,005 - INFO - [+] Listening for connection...
+2023-07-12 12:28:55,310 - INFO - [+] Got a connection from ('127.0.0.1', 41680)
+2023-07-12 12:28:55,316 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:28:55,329 - INFO - Auth rejected (none).
+2023-07-12 12:28:57,567 - INFO - Succesfull Login - User: user - Password: pass - ID: 326971
+2023-07-12 12:28:57,567 - INFO - Auth granted (password).
+2023-07-12 12:28:57,569 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:38:33,031 - INFO - [+] Listening for connection...
+2023-07-12 12:38:35,097 - INFO - [+] Got a connection from ('127.0.0.1', 50422)
+2023-07-12 12:38:35,103 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:38:35,118 - INFO - Auth rejected (none).
+2023-07-12 12:38:37,003 - INFO - Succesfull Login - User: user - Password: pass - ID: 243581
+2023-07-12 12:38:37,003 - INFO - Auth granted (password).
+2023-07-12 12:38:37,005 - INFO - [+] Authenticated!
+2023-07-12 12:38:37,026 - CMD - 
+2023-07-12 12:39:40,945 - INFO - [+] Listening for connection...
+2023-07-12 12:39:45,457 - INFO - [+] Got a connection from ('127.0.0.1', 58666)
+2023-07-12 12:39:45,463 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:39:45,475 - INFO - Auth rejected (none).
+2023-07-12 12:39:47,675 - INFO - Succesfull Login - User: user - Password: pass - ID: 629775
+2023-07-12 12:39:47,675 - INFO - Auth granted (password).
+2023-07-12 12:41:29,595 - INFO - [+] Listening for connection...
+2023-07-12 12:41:31,049 - INFO - [+] Got a connection from ('127.0.0.1', 45366)
+2023-07-12 12:41:31,053 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:41:31,067 - INFO - Auth rejected (none).
+2023-07-12 12:41:32,260 - INFO - Succesfull Login - User: user - Password: pass - ID: 833227
+2023-07-12 12:41:32,260 - INFO - Auth granted (password).
+2023-07-12 12:45:06,537 - INFO - [+] Listening for connection...
+2023-07-12 12:45:08,587 - INFO - [+] Got a connection from ('127.0.0.1', 47496)
+2023-07-12 12:45:08,593 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:45:08,606 - INFO - Auth rejected (none).
+2023-07-12 12:45:10,494 - INFO - Succesfull Login - User: user - Password: pass - ID: 600751
+2023-07-12 12:45:10,494 - INFO - Auth granted (password).
+2023-07-12 12:45:10,495 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:47:05,864 - INFO - [+] Listening for connection...
+2023-07-12 12:47:07,357 - INFO - [+] Got a connection from ('127.0.0.1', 56536)
+2023-07-12 12:47:07,362 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:47:07,376 - INFO - Auth rejected (none).
+2023-07-12 12:47:08,951 - INFO - Succesfull Login - User: user - Password: pass - ID: 248191
+2023-07-12 12:47:08,951 - INFO - Auth granted (password).
+2023-07-12 12:47:08,953 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:50:24,944 - INFO - [+] Listening for connection...
+2023-07-12 12:50:31,134 - INFO - [+] Got a connection from ('127.0.0.1', 60950)
+2023-07-12 12:50:31,139 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:50:31,154 - INFO - Auth rejected (none).
+2023-07-12 12:50:32,809 - INFO - Succesfull Login - User: user - Password: pass - ID: 558808
+2023-07-12 12:50:32,809 - INFO - Auth granted (password).
+2023-07-12 12:50:32,810 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:51:13,345 - INFO - [+] Listening for connection...
+2023-07-12 12:51:15,895 - INFO - [+] Got a connection from ('127.0.0.1', 41984)
+2023-07-12 12:51:15,900 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:51:15,914 - INFO - Auth rejected (none).
+2023-07-12 12:51:18,753 - INFO - Succesfull Login - User: user - Password: pass - ID: 330859
+2023-07-12 12:51:18,753 - INFO - Auth granted (password).
+2023-07-12 12:51:18,754 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:51:18,755 - INFO - [+] Authenticated!
+2023-07-12 12:51:18,775 - CMD - 
+2023-07-12 12:54:12,130 - INFO - [+] Listening for connection...
+2023-07-12 12:54:13,920 - INFO - [+] Got a connection from ('127.0.0.1', 55962)
+2023-07-12 12:54:13,925 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:54:13,939 - INFO - Auth rejected (none).
+2023-07-12 12:54:15,465 - INFO - Succesfull Login - User: user - Password: pass - ID: 528651
+2023-07-12 12:54:15,465 - INFO - Auth granted (password).
+2023-07-12 12:54:15,467 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:54:15,467 - INFO - [+] Authenticated!
+2023-07-12 12:54:15,487 - CMD - 
+2023-07-12 12:54:48,535 - INFO - [+] Listening for connection...
+2023-07-12 12:54:50,647 - INFO - [+] Got a connection from ('127.0.0.1', 56730)
+2023-07-12 12:54:50,652 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 12:54:50,666 - INFO - Auth rejected (none).
+2023-07-12 12:54:52,362 - INFO - Succesfull Login - User: user - Password: pass - ID: 539473
+2023-07-12 12:54:52,362 - INFO - Auth granted (password).
+2023-07-12 12:54:52,364 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 12:54:52,364 - INFO - [+] Authenticated!
+2023-07-12 12:54:52,384 - CMD - 
+2023-07-12 13:06:18,703 - INFO - [+] Listening for connection...
+2023-07-12 13:06:20,213 - INFO - [+] Got a connection from ('127.0.0.1', 43438)
+2023-07-12 13:06:20,219 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 13:06:20,235 - INFO - Auth rejected (none).
+2023-07-12 13:06:22,759 - INFO - Succesfull Login - User: user - Password: pass - ID: 969286
+2023-07-12 13:06:22,759 - INFO - Auth granted (password).
+2023-07-12 13:06:22,760 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 13:06:22,761 - INFO - [+] Authenticated!
+2023-07-12 13:06:22,782 - CMD - 
+2023-07-12 13:08:13,331 - INFO - [+] Listening for connection...
+2023-07-12 13:08:17,381 - INFO - [+] Got a connection from ('127.0.0.1', 47082)
+2023-07-12 13:08:17,387 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 13:08:17,400 - INFO - Auth rejected (none).
+2023-07-12 13:08:19,911 - INFO - Succesfull Login - User: user - Password: pass - ID: 360550
+2023-07-12 13:08:19,912 - INFO - Auth granted (password).
+2023-07-12 13:08:19,913 - ERROR - Secsh channel 1 open FAILED: open failed: Administratively prohibited
+2023-07-12 13:08:19,914 - INFO - [+] Authenticated!
+2023-07-12 13:08:19,935 - CMD - 
+2023-07-12 13:11:24,465 - INFO - [+] Listening for connection...
+2023-07-12 13:11:25,990 - INFO - [+] Got a connection from ('127.0.0.1', 47164)
+2023-07-12 13:11:25,996 - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-12 13:11:26,009 - INFO - Auth rejected (none).
+2023-07-12 13:11:27,832 - INFO - Succesfull Login - User: user - Password: pass - ID: 793887
+2023-07-12 13:11:27,832 - INFO - Auth granted (password).
+2023-07-12 13:11:27,834 - INFO - [+] Authenticated!
+2023-07-12 13:11:27,855 - CMD - 

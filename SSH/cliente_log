@@ -1,0 +1,67 @@
+OpenSSH_8.9p1 Ubuntu-3ubuntu0.1, OpenSSL 3.0.2 15 Mar 2022
+debug1: Reading configuration data /home/criggio/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: include /etc/ssh/ssh_config.d/*.conf matched no files
+debug1: /etc/ssh/ssh_config line 21: Applying options for *
+debug1: Connecting to 127.0.0.1 [127.0.0.1] port 22222.
+debug1: Connection established.
+debug1: identity file /home/criggio/.ssh/id_rsa type 0
+debug1: identity file /home/criggio/.ssh/id_rsa-cert type -1
+debug1: identity file /home/criggio/.ssh/id_ecdsa type -1
+debug1: identity file /home/criggio/.ssh/id_ecdsa-cert type -1
+debug1: identity file /home/criggio/.ssh/id_ecdsa_sk type -1
+debug1: identity file /home/criggio/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file /home/criggio/.ssh/id_ed25519 type -1
+debug1: identity file /home/criggio/.ssh/id_ed25519-cert type -1
+debug1: identity file /home/criggio/.ssh/id_ed25519_sk type -1
+debug1: identity file /home/criggio/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file /home/criggio/.ssh/id_xmss type -1
+debug1: identity file /home/criggio/.ssh/id_xmss-cert type -1
+debug1: identity file /home/criggio/.ssh/id_dsa type -1
+debug1: identity file /home/criggio/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.1
+debug1: Remote protocol version 2.0, remote software version paramiko_3.2.0
+debug1: compat_banner: no match: paramiko_3.2.0
+debug1: Authenticating to 127.0.0.1:22222 as 'user'
+debug1: load_hostkeys: fopen /home/criggio/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256@libssh.org
+debug1: kex: host key algorithm: rsa-sha2-512
+debug1: kex: server->client cipher: aes128-ctr MAC: hmac-sha2-256-etm@openssh.com compression: none
+debug1: kex: client->server cipher: aes128-ctr MAC: hmac-sha2-256-etm@openssh.com compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-rsa SHA256:++rvgTSFpsdY3go4U7qm+YPO7KZw6IQouYkup6ZBsSk
+debug1: load_hostkeys: fopen /home/criggio/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: Host '[127.0.0.1]:22222' is known and matches the RSA host key.
+debug1: Found key in /home/criggio/.ssh/known_hosts:1
+debug1: rekey out after 4294967296 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 4294967296 blocks
+debug1: Will attempt key: /home/criggio/.ssh/id_rsa RSA SHA256:++rvgTSFpsdY3go4U7qm+YPO7KZw6IQouYkup6ZBsSk
+debug1: Will attempt key: /home/criggio/.ssh/id_ecdsa 
+debug1: Will attempt key: /home/criggio/.ssh/id_ecdsa_sk 
+debug1: Will attempt key: /home/criggio/.ssh/id_ed25519 
+debug1: Will attempt key: /home/criggio/.ssh/id_ed25519_sk 
+debug1: Will attempt key: /home/criggio/.ssh/id_xmss 
+debug1: Will attempt key: /home/criggio/.ssh/id_dsa 
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,rsa-sha2-512,rsa-sha2-256,ssh-rsa,ssh-dss>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: password
+debug1: Next authentication method: password
+Authenticated to 127.0.0.1 ([127.0.0.1]:22222) using "password".
+debug1: channel 0: new [client-session]
+debug1: Entering interactive session.
+debug1: pledge: filesystem
+debug1: Sending environment.
+debug1: channel 0: setting env LANG = "C.UTF-8"
+debug1: client_input_channel_req: channel 0 rtype shell reply 1
+PTY allocation request failed on channel 0
