@@ -1,0 +1,16 @@
+POR HACER:
+
+LECTOR BIEN JSON
+
+REESTRUCTURAR FUNCIONES
+
+APLICAR CD
+
+MEJORAR LOGS 
+
+CODIGO MÁS LIMPIO
+
+
+EJECUCIÓN:
+    - python3 SSH/HoneyPot.python3
+    - cliente : ssh -p 2222 user@127.0.0.1

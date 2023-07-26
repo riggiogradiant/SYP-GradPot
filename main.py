@@ -1,6 +1,6 @@
 import sys
 import os
-from SSH import function
+from SSH import ssh_functions
 
 # Obtener la ruta absoluta del archivo que llamó a main.py
 ruta_llamada = os.path.abspath(os.getcwd())
@@ -9,9 +9,11 @@ ruta_llamada = os.path.abspath(os.getcwd())
 if "SSH" in ruta_llamada:
 
     # Obtener el input del argumento de línea de comandos
-    cmd_from_client = sys.argv[1]
+    command = sys.argv[1]
+    
+    client_ip = sys.argv[2]
 
-    function.execute_cmd(cmd_from_client)
+    ssh_functions.handle_cmd(command, client_ip)
 
 # Comprobar si las peticiones vienen de Modbus
 elif "Modbus" in ruta_llamada:
