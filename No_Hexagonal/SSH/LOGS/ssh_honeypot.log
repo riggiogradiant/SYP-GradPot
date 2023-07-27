@@ -238,3 +238,25 @@
 2023-07-26 13:39:53,251 - root - INFO - Command received (127.0.0.1): cd bin
 2023-07-26 13:39:54,836 - root - INFO - Command received (127.0.0.1): cd ..
 2023-07-26 13:39:55,632 - root - INFO - Command received (127.0.0.1): pwd
+2023-07-27 07:36:31,170 - root - INFO - New connection from: 127.0.0.1
+2023-07-27 07:36:31,173 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-07-27 07:36:31,276 - paramiko.transport - INFO - Auth rejected (none).
+2023-07-27 07:36:31,276 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-07-27 07:36:32,853 - root - INFO - New client authenticated with password (127.0.0.1): username: u
+2023-07-27 07:36:32,853 - root - INFO - New client with ID: 916170
+2023-07-27 07:36:32,853 - paramiko.transport - INFO - Auth granted (password).
+2023-07-27 07:36:32,853 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-07-27 07:36:32,853 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-07-27 07:36:32,853 - root - INFO - Client compression (127.0.0.1): none
+2023-07-27 07:36:32,853 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-07-27 07:36:32,854 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-07-27 07:36:35,613 - root - INFO - Command received (127.0.0.1): ñ
+2023-07-27 07:36:36,941 - root - INFO - Command received (127.0.0.1): ls
+2023-07-27 07:36:37,638 - root - INFO - Command received (127.0.0.1): ls
+2023-07-27 07:36:38,237 - root - INFO - Command received (127.0.0.1): ls
+2023-07-27 07:36:38,717 - root - INFO - Command received (127.0.0.1): ls
+2023-07-27 07:36:58,167 - root - INFO - Command received (127.0.0.1): cd etc
+2023-07-27 07:37:00,005 - root - INFO - Command received (127.0.0.1): ls
+2023-07-27 07:37:06,701 - root - INFO - Command received (127.0.0.1): cat userdb.txt
+2023-07-27 07:44:46,429 - root - INFO - Command received (127.0.0.1): exit
+2023-07-27 07:44:46,430 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
