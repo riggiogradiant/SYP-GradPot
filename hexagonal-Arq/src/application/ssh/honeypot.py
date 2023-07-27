@@ -9,6 +9,7 @@ import subprocess
 import random
 import ssh_functions
 
+from ..configuration.load_config import cargar_seccion_ssh
 
 
 
@@ -16,8 +17,11 @@ HOST_KEY = paramiko.RSAKey(filename='server.key')
 SSH_BANNER = "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1"
 
 ACTUAL_PATH = os.getcwd()
-CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../infrastructure', 'config.json')
+CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
+
+ssh_detection = cargar_seccion_ssh(CONFIG_FILE)
+
 
 
 
