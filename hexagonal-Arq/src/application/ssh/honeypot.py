@@ -7,20 +7,26 @@ import logging
 import paramiko
 import subprocess
 import random
-import ssh_functions
-
-from ..configuration.load_config import cargar_seccion_ssh
-
 
 
 HOST_KEY = paramiko.RSAKey(filename='server.key')
-SSH_BANNER = "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1"
 
 ACTUAL_PATH = os.getcwd()
 CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
-ssh_detection = cargar_seccion_ssh(CONFIG_FILE)
+# Codigo necesario para importar funcion del load_config
+DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
+DIR_SSH = os.path.normpath(DIR_SSH)
+DIR_APP = os.path.join(DIR_SSH, "..")
+DIR_APP = os.path.normpath(DIR_APP)
+sys.path.append(DIR_APP)
+from configuration.load_config import cargar_seccion_ssh
+
+
+ 
+ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
+SSH_BANNER = ssh_dict['ssh_banner']
 
 
 
@@ -34,7 +40,8 @@ BACK_KEY = '\x7f'.encode()
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO,
-    filename='../../infrastructure/logs/ssh_honeypot.log')
+    filename= ACTUAL_PATH + ssh_dict['log_file']
+)
 
 # Devuelve un diccionario de los usuarios y de las contraseñas
 def get_user_pass(file_path):
@@ -52,12 +59,8 @@ def get_user_pass(file_path):
 
 
 # Función para sacar info del json en función a su etiqueta
-
-
-USERDB_FILE = ssh_functions.valor_json_etiqueta("userdb")
-HP_WORKING_DIR = ACTUAL_PATH + ssh_functions.valor_json_etiqueta("working_dir")
-
-
+USERDB_FILE = ssh_dict['userdb'] 
+HP_WORKING_DIR = ACTUAL_PATH + ssh_dict['working_dir']
 
 class BasicSshHoneypot(paramiko.ServerInterface):
 
@@ -236,10 +239,8 @@ def start_server(port, bind):
 
 if __name__ == "__main__":
 
-    
-
-    host = ssh_functions.valor_json_etiqueta("host")
-    port = ssh_functions.valor_json_etiqueta("port")
+    host = ssh_dict['host']
+    port = ssh_dict['port']
     print('Listening for connection ...')
     start_server(port, host)
     

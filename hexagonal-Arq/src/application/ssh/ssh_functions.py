@@ -2,6 +2,22 @@ import logging
 import os
 import subprocess
 import json
+import sys
+
+ACTUAL_PATH = os.getcwd()
+CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
+CONFIG_FILE = os.path.normpath(CONFIG_FILE)
+
+
+# Codigo necesario para importar funcion del load_config
+DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
+DIR_SSH = os.path.normpath(DIR_SSH)
+DIR_APP = os.path.join(DIR_SSH, "..")
+DIR_APP = os.path.normpath(DIR_APP)
+sys.path.append(DIR_APP)
+from configuration.load_config import cargar_seccion_ssh
+
+ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
 
 
 def handle_cmd(cmd, ip):
@@ -76,7 +92,8 @@ def printear_respuesta_archivo(archivo):
 # Función para lidiar con los cambios de directorio
 def cd_dealer(cmd):
     directorio = cmd.split("cd ")[1].strip()
-    log_dir = valor_json_etiqueta("log_dir")
+    #log_dir = valor_json_etiqueta("log_dir")
+    log_dir = ssh_dict['log_dir']
 
     try:
     # Leer la primera línea del archivo y asignarla a una variable
@@ -94,7 +111,8 @@ def cd_dealer(cmd):
 #Función para conseguir el directorio actualizado 
 def obtener_working_dir():
 
-    log_dir = valor_json_etiqueta("log_dir")
+    #log_dir = valor_json_etiqueta("log_dir")
+    log_dir = ssh_dict['log_dir']
 
     try:
         # Leer la primera línea del archivo y asignarla a una variable
@@ -108,7 +126,8 @@ def obtener_working_dir():
     return None
 
 def pwd_get_dir():
-    log_dir = valor_json_etiqueta("log_dir")
+    #log_dir = valor_json_etiqueta("log_dir")
+    log_dir = ssh_dict['log_dir']
     try:
         # Leer la primera línea del archivo y asignarla a una variable
         with open(log_dir, "r") as file:
@@ -122,19 +141,19 @@ def pwd_get_dir():
         print(f"Error al leer el archivo: {e}")
 
 #Obtener la info a partir de la etiqueta en el json
-def valor_json_etiqueta(etiqueta):
-    # Cargamos el archivo JSON
+# def valor_json_etiqueta(etiqueta):
+#     # Cargamos el archivo JSON
 
-    ACTUAL_PATH = os.getcwd()
-    CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
-    CONFIG_FILE = os.path.normpath(CONFIG_FILE)
+#     ACTUAL_PATH = os.getcwd()
+#     CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
+#     CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
-    with open(CONFIG_FILE) as archivo:
-        data = json.load(archivo)
+#     with open(CONFIG_FILE) as archivo:
+#         data = json.load(archivo)
 
-    # Intentamos obtener el valor para la etiqueta proporcionada
-    try:
-        valor = data['ssh'][etiqueta]
-        return valor
-    except KeyError:
-        return None
+#     # Intentamos obtener el valor para la etiqueta proporcionada
+#     try:
+#         valor = data['ssh'][etiqueta]
+#         return valor
+#     except KeyError:
+#         return None
