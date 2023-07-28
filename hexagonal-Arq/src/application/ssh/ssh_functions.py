@@ -19,25 +19,32 @@ from configuration.load_config import cargar_seccion_ssh
 
 ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
 
-
-def handle_cmd(cmd, ip):
+def handle_cmd(cmd, ip, username):
 
     HP_WORKING_DIR = obtener_working_dir()
 
     response = ""
     if cmd.startswith("ls"):
         ejecutar_comando_en_directorio(cmd, HP_WORKING_DIR)
-        printear_respuesta_archivo("ssh_functions_out.txt")
+        printear_respuesta_archivo("ssh_functions_out.log")
     elif cmd == "pwd":
+        
         xtra = pwd_get_dir()
         response = "/root" + xtra
         if response.endswith(".") or response.endswith("/"):
             response = response[:-1]
 
-
     elif cmd.startswith("cd"):
-        print(HP_WORKING_DIR)
         cd_dealer(cmd)
+    
+    elif cmd == "whoami":
+        response = username
+    
+    else:
+        #Lo que se va a ejecutar si es otro comando
+        ejecutar_comando_en_directorio(cmd, HP_WORKING_DIR)
+        printear_respuesta_archivo("ssh_functions_out.log")
+        
 
     if response != '':
         logging.info('Response from honeypot ({}): {}'.format(ip, response))
@@ -47,7 +54,12 @@ def handle_cmd(cmd, ip):
 
 # Función para ejecutar un comando en un directoio concreto 
 def ejecutar_comando_en_directorio(comando, directorio):
+
+    ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+   
+
     try:
+    
         # Utilizamos el método `run` de subprocess para ejecutar el comando en el directorio indicado
         resultado = subprocess.run(comando, shell=True, cwd=directorio, stdout=subprocess.PIPE, text=True)
 
@@ -56,7 +68,7 @@ def ejecutar_comando_en_directorio(comando, directorio):
 
         if codigo_retorno == 0:
             # El comando se ejecutó correctamente, escribir la salida en el archivo
-            with open("ssh_functions_out.txt", "w") as archivo_salida:
+            with open(ssh_functions_out_dir, "w") as archivo_salida:
                 archivo_salida.write(resultado.stdout)
         else:
             # Hubo un error al ejecutar el comando
@@ -68,23 +80,27 @@ def ejecutar_comando_en_directorio(comando, directorio):
 # Función para pillar la info del output
 def printear_respuesta_archivo(archivo):
     respuesta = []
+    
+    ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+    
+
     try:
-        with open(archivo, "r") as archivo_salida:
+        with open(ssh_functions_out_dir, "r") as archivo_salida:
             for linea in archivo_salida:
                 # Procesar cada línea para eliminar los espacios en blanco al principio
                 linea_procesada = linea.strip()
                 respuesta.append(linea_procesada)
 
     except Exception as e:
-        logging.error("Error al leer el archivo '{}': {}".format(archivo, e))
+        logging.error("Error al leer el archivo '{}': {}".format(ssh_functions_out_dir, e))
         print("Error al leer la salida del comando.")
 
     # Limpiar el contenido del archivo
     try:
-        with open(archivo, "w") as archivo_salida:
+        with open(ssh_functions_out_dir, "w") as archivo_salida:
             archivo_salida.write('')
     except Exception as e:
-        logging.error("Error al limpiar el archivo '{}': {}".format(archivo, e))
+        logging.error("Error al limpiar el archivo '{}': {}".format(ssh_functions_out_dir, e))
 
     # Imprimir la respuesta en una sola línea separada por espacios
     print("   ".join(respuesta))
@@ -92,7 +108,7 @@ def printear_respuesta_archivo(archivo):
 # Función para lidiar con los cambios de directorio
 def cd_dealer(cmd):
     directorio = cmd.split("cd ")[1].strip()
-    #log_dir = valor_json_etiqueta("log_dir")
+    
     log_dir = ssh_dict['log_dir']
 
     try:
@@ -111,7 +127,6 @@ def cd_dealer(cmd):
 #Función para conseguir el directorio actualizado 
 def obtener_working_dir():
 
-    #log_dir = valor_json_etiqueta("log_dir")
     log_dir = ssh_dict['log_dir']
 
     try:
@@ -126,8 +141,10 @@ def obtener_working_dir():
     return None
 
 def pwd_get_dir():
-    #log_dir = valor_json_etiqueta("log_dir")
+    
     log_dir = ssh_dict['log_dir']
+    log_dir = os.path.normpath(ACTUAL_PATH +'/' + log_dir)
+
     try:
         # Leer la primera línea del archivo y asignarla a una variable
         with open(log_dir, "r") as file:
@@ -140,20 +157,3 @@ def pwd_get_dir():
     except Exception as e:
         print(f"Error al leer el archivo: {e}")
 
-#Obtener la info a partir de la etiqueta en el json
-# def valor_json_etiqueta(etiqueta):
-#     # Cargamos el archivo JSON
-
-#     ACTUAL_PATH = os.getcwd()
-#     CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
-#     CONFIG_FILE = os.path.normpath(CONFIG_FILE)
-
-#     with open(CONFIG_FILE) as archivo:
-#         data = json.load(archivo)
-
-#     # Intentamos obtener el valor para la etiqueta proporcionada
-#     try:
-#         valor = data['ssh'][etiqueta]
-#         return valor
-#     except KeyError:
-#         return None

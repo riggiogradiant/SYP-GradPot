@@ -10,6 +10,7 @@ import random
 
 
 HOST_KEY = paramiko.RSAKey(filename='server.key')
+USERNAME_SESSION = ""
 
 ACTUAL_PATH = os.getcwd()
 CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
@@ -22,14 +23,9 @@ DIR_APP = os.path.join(DIR_SSH, "..")
 DIR_APP = os.path.normpath(DIR_APP)
 sys.path.append(DIR_APP)
 from configuration.load_config import cargar_seccion_ssh
-
-
  
 ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
 SSH_BANNER = ssh_dict['ssh_banner']
-
-
-
 
 UP_KEY = '\x1b[A'.encode()
 DOWN_KEY = '\x1b[B'.encode()
@@ -57,7 +53,6 @@ def get_user_pass(file_path):
 
     return user_pass_dict
 
-
 # Función para sacar info del json en función a su etiqueta
 USERDB_FILE = ssh_dict['userdb'] 
 HP_WORKING_DIR = ACTUAL_PATH + ssh_dict['working_dir']
@@ -83,6 +78,7 @@ class BasicSshHoneypot(paramiko.ServerInterface):
 
     def check_auth_password(self, username, password):
         # Verify the received username and password against the allowed users' credentials.
+        global USERNAME_SESSION
 
         ALLOWED_USERS = get_user_pass(USERDB_FILE)
 
@@ -90,6 +86,7 @@ class BasicSshHoneypot(paramiko.ServerInterface):
             logging.info('New client authenticated with password ({}): username: {}'.format(
                 self.client_ip, username))
             logging.info('New client with ID: ' + str(random.randint(100000, 999999)))
+            USERNAME_SESSION = username
             return paramiko.AUTH_SUCCESSFUL
         else:
             logging.info('Failed password authentication ({}): username: {}'.format(
@@ -109,7 +106,6 @@ class BasicSshHoneypot(paramiko.ServerInterface):
         logging.info('client sent command via check_channel_exec_request ({}): {}'.format(
                     self.client_ip, command))
         return True
-
 
 def handle_connection(client, addr):
 
@@ -154,12 +150,12 @@ def handle_connection(client, addr):
             raise Exception("No shell request")
      
         try:
-
-            log_file = os.path.join("../../infrastructure/logs", "dir.log")
+            log_file =  ssh_dict['log_dir']
             with open(log_file, "w") as file:
                 file.write(HP_WORKING_DIR)
 
-            chan.send("Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-128-generic x86_64)\r\n\r\n")
+            welcome_msg = ssh_dict['welcome_msg_client']
+            chan.send(welcome_msg +"\r\n\r\n")
             run = True
             while run:
                 chan.send("$ ")
@@ -184,15 +180,13 @@ def handle_connection(client, addr):
                 logging.info('Command received ({}): {}'.format(client_ip, command))
 
                 if command == "exit":
-                    # As we don't have the settings module, just printing the log message.
                     print("Connection closed (via exit command): " + client_ip)
                     run = False
 
                 else:
-                    # EJECUTA EL COMANDO
-                    args = ["python3", "../../../hp_main.py", command, client_ip]
+                    args = ["python3", "../../../hp_main.py", command, client_ip, USERNAME_SESSION]
                     output = subprocess.check_output(args)
-                    chan.send(output.decode()+"\n")
+                    chan.send(output.decode()+"\r\n")
 
 
         except Exception as err:
@@ -227,7 +221,6 @@ def start_server(port, bind):
     while True:
         try:
             sock.listen(100)
-            # print('Listening for connection ...')
             client, addr = sock.accept()
         except Exception as err:
             print('*** Listen/accept failed: {}'.format(err))

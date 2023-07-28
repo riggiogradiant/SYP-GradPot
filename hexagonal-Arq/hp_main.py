@@ -12,7 +12,8 @@ if "ssh" in ruta_llamada:
     # Obtener el input del argumento de línea de comandos
     command = sys.argv[1]
     client_ip = sys.argv[2]
-    ssh_functions.handle_cmd(command, client_ip)
+    username = sys.argv[3]
+    ssh_functions.handle_cmd(command, client_ip, username)
 # Comprobar si las peticiones vienen de Modbus
 elif "modbus" in ruta_llamada:
     

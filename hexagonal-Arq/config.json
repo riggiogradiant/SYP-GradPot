@@ -6,6 +6,8 @@
       "port" : 2222,
       "working_dir" : "/honeypot_files",
       "log_dir" : "../../infrastructure/logs/dir.log",
-      "ssh_banner": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1"
+      "ssh_banner": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1",
+      "welcome_msg_client": "Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-128-generic x86_64)",
+      "ssh_functions_out" : "../../infrastructure/logs/ssh_functions_out.log"
     }
   }
