@@ -1057,3 +1057,4 @@
 2023-07-28 14:19:22,489 - root - INFO - Command received (127.0.0.1): cd bin
 2023-07-28 14:19:24,206 - root - INFO - Command received (127.0.0.1): ls
 2023-07-28 14:19:45,185 - root - INFO - Command received (127.0.0.1): nano bin1.txt
+2023-07-28 14:54:05,721 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
