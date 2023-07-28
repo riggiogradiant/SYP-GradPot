@@ -10,6 +10,8 @@ import random
 
 
 HOST_KEY = paramiko.RSAKey(filename='server.key')
+
+#Variable Global para implementar el whoami con los distintos usuarios
 USERNAME_SESSION = ""
 
 ACTUAL_PATH = os.getcwd()

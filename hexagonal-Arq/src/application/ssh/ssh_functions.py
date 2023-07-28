@@ -1,7 +1,7 @@
 import logging
 import os
 import subprocess
-import json
+import textwrap
 import sys
 
 ACTUAL_PATH = os.getcwd()
@@ -26,7 +26,7 @@ def handle_cmd(cmd, ip, username):
     response = ""
     if cmd.startswith("ls"):
         ejecutar_comando_en_directorio(cmd, HP_WORKING_DIR)
-        printear_respuesta_archivo("ssh_functions_out.log")
+        printear_respuesta_archivo(cmd)
     elif cmd == "pwd":
         
         xtra = pwd_get_dir()
@@ -43,7 +43,7 @@ def handle_cmd(cmd, ip, username):
     else:
         #Lo que se va a ejecutar si es otro comando
         ejecutar_comando_en_directorio(cmd, HP_WORKING_DIR)
-        printear_respuesta_archivo("ssh_functions_out.log")
+        printear_respuesta_archivo(cmd)
         
 
     if response != '':
@@ -78,7 +78,7 @@ def ejecutar_comando_en_directorio(comando, directorio):
         return f"Error: {e}"
 
 # Función para pillar la info del output
-def printear_respuesta_archivo(archivo):
+def printear_respuesta_archivo(cmd):
     respuesta = []
     
     ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
@@ -103,7 +103,15 @@ def printear_respuesta_archivo(archivo):
         logging.error("Error al limpiar el archivo '{}': {}".format(ssh_functions_out_dir, e))
 
     # Imprimir la respuesta en una sola línea separada por espacios
-    print("   ".join(respuesta))
+    if cmd == "ps":
+        # Combinar todas las líneas en una sola cadena separada por saltos de línea ("\n")
+        respuesta = "\n".join(respuesta)
+        # Reemplazar las comas (",") por saltos de línea ("\n")
+        respuesta = respuesta.replace(",", "\r\n")
+        respuesta = textwrap.dedent(respuesta)
+        print(respuesta)
+    else:
+        print("   ".join(respuesta))
 
 # Función para lidiar con los cambios de directorio
 def cd_dealer(cmd):
