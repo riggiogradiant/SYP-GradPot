@@ -1,4 +1,0 @@
-user:x:pass
-user2:x:pass2
-a:x:b
-u:x:p

@@ -1,8 +1,0 @@
-{
-    "ssh":{
-      "log_file" : "./SSH/Server_Files/server_log.txt",
-      "userdb" : "/HoneyPot_Files/etc/userdb.txt",
-      "host" : "127.0.0.1",
-      "port" : 2222
-    }
-  }

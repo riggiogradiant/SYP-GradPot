@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  my_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: own_hp_image:latest  # Nombre personalizado para la imagen
+    ports:
+      - "2222:2222"
+    tty: true # Asignar una terminal al contenedor
