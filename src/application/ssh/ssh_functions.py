@@ -4,6 +4,8 @@ import subprocess
 import textwrap
 import sys
 
+ACTUAL_REAL_PATH = os.getcwd()
+print("EL ACTUAL REAL PATH ES del SSH FUNCTIONS: "+ ACTUAL_REAL_PATH)
 
 ACTUAL_PATH = os.getcwd() + '/' + 'src/application/ssh'
 
@@ -26,6 +28,8 @@ sys.path.append("/home/criggio/OWN_HONEYPOT/src/application")
 from configuration.load_config import cargar_seccion_ssh
 print("EL CONFIG FILE DESDE EL FUNCTIONS ES : " + CONFIG_FILE)
 ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
+print(type(ssh_dict))
+print(ssh_dict)
 
 def handle_cmd(cmd, ip, username):
 

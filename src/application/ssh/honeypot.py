@@ -237,5 +237,7 @@ if __name__ == "__main__":
     host = ssh_dict['host']
     port = ssh_dict['port']
     print('Listening for connection ...')
+    ACTUAL_REAL_PATH = os.getcwd()
+    print("EL ACTUAL REAL PATH DEL HP ES: " + ACTUAL_REAL_PATH)
     start_server(port, host)
     
