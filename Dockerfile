@@ -4,19 +4,19 @@ WORKDIR /app
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
+
+#Para que se imprima el output en tiempo real
 ENV PYTHONUNBUFFERED 1
+
 
 # install dependencies
 RUN pip3 install --upgrade pip
 COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
 
-COPY ./HP /app
+COPY .  /app
 
 WORKDIR /app/src/application/ssh
-
-RUN apt-get update && apt-get install -y openssh-server
-
 EXPOSE 2222
 
 # Comando para ejecutar el archivo honeypot.py
