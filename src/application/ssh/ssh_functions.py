@@ -4,7 +4,10 @@ import subprocess
 import textwrap
 import sys
 
-ACTUAL_PATH = os.getcwd()
+
+ACTUAL_PATH = os.getcwd() + '/' + 'src/application/ssh'
+
+print("ACTUAL PATH: " + ACTUAL_PATH) 
 CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
@@ -12,11 +15,16 @@ CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 # Codigo necesario para importar funcion del load_config
 DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
 DIR_SSH = os.path.normpath(DIR_SSH)
-DIR_APP = os.path.join(DIR_SSH, "..")
+print("DIRECTORIO SSH : " + DIR_SSH)
+DIR_APP = os.path.join(ACTUAL_PATH, "..")
 DIR_APP = os.path.normpath(DIR_APP)
-sys.path.append(DIR_APP)
-from configuration.load_config import cargar_seccion_ssh
+print("DIR APP: "+ DIR_APP)
+# sys.path.append(DIR_APP)
 
+
+sys.path.append("/home/criggio/OWN_HONEYPOT/src/application")
+from configuration.load_config import cargar_seccion_ssh
+print("EL CONFIG FILE DESDE EL FUNCTIONS ES : " + CONFIG_FILE)
 ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
 
 def handle_cmd(cmd, ip, username):
@@ -55,7 +63,8 @@ def handle_cmd(cmd, ip, username):
 # Función para ejecutar un comando en un directoio concreto 
 def ejecutar_comando_en_directorio(comando, directorio):
 
-    ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+    # ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+    ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
    
 
     try:
@@ -81,7 +90,9 @@ def ejecutar_comando_en_directorio(comando, directorio):
 def printear_respuesta_archivo(cmd):
     respuesta = []
     
-    ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+    # ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
+    ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
+    
     
 
     try:
@@ -117,7 +128,8 @@ def printear_respuesta_archivo(cmd):
 def cd_dealer(cmd):
     directorio = cmd.split("cd ")[1].strip()
     
-    log_dir = ssh_dict['log_dir']
+    # log_dir = ssh_dict['log_dir']
+    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
 
     try:
     # Leer la primera línea del archivo y asignarla a una variable
@@ -135,8 +147,8 @@ def cd_dealer(cmd):
 #Función para conseguir el directorio actualizado 
 def obtener_working_dir():
 
-    log_dir = ssh_dict['log_dir']
-
+    # log_dir = ssh_dict['log_dir']
+    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
     try:
         # Leer la primera línea del archivo y asignarla a una variable
         with open(log_dir, "r") as file:
@@ -150,8 +162,11 @@ def obtener_working_dir():
 
 def pwd_get_dir():
     
-    log_dir = ssh_dict['log_dir']
-    log_dir = os.path.normpath(ACTUAL_PATH +'/' + log_dir)
+    # log_dir = ssh_dict['log_dir']
+    # log_dir = os.path.normpath(ACTUAL_PATH +'/' + log_dir)
+
+    # log_dir = ssh_dict['log_dir']
+    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
 
     try:
         # Leer la primera línea del archivo y asignarla a una variable
