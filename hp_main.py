@@ -8,7 +8,7 @@ from src.application.ssh import ssh_functions
 # Obtener la ruta absoluta del archivo que llamó a main.py
 ruta_llamada = os.path.abspath(os.getcwd())
 ruta_hp = os.getcwd() + "/src/application/ssh"
-print(ruta_llamada)
+# print(ruta_llamada)
 
 #Si es la llamda de ejecución del HP
 if ruta_llamada.endswith("OWN_HONEYPOT"):

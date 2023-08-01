@@ -1,13 +1,13 @@
 {
     "ssh":{
-      "log_file" : "../../../infrastructure/logs/ssh_honeypot.log",
-      "userdb" : "./honeypot_files/etc/userdb.txt",
+      "log_file" : "/src/infrastructure/logs/ssh_honeypot.log",
+      "userdb" : "/src/application/ssh/honeypot_files/etc/userdb.txt",
       "host" : "127.0.0.1",
       "port" : 2222,
-      "working_dir" : "/honeypot_files",
-      "log_dir" : "../../infrastructure/logs/dir.log",
+      "working_dir" : "/src/application/ssh/honeypot_files",
+      "log_dir" : "/src/infrastructure/logs/dir.log",
       "ssh_banner": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1",
       "welcome_msg_client": "Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-128-generic x86_64)",
-      "ssh_functions_out" : "../../infrastructure/logs/ssh_functions_out.log"
+      "ssh_functions_out" : "/src/infrastructure/logs/ssh_functions_out.log"
     }
   }

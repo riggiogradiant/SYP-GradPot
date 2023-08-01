@@ -14,6 +14,8 @@ HOST_KEY = paramiko.RSAKey(filename='server.key')
 #Variable Global para implementar el whoami con los distintos usuarios
 USERNAME_SESSION = ""
 
+
+
 ACTUAL_PATH = os.getcwd()
 CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
@@ -26,19 +28,43 @@ DIR_APP = os.path.normpath(DIR_APP)
 sys.path.append(DIR_APP)
 from configuration.load_config import cargar_seccion_ssh
  
-ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
-SSH_BANNER = ssh_dict['ssh_banner']
-
 UP_KEY = '\x1b[A'.encode()
 DOWN_KEY = '\x1b[B'.encode()
 RIGHT_KEY = '\x1b[C'.encode()
 LEFT_KEY = '\x1b[D'.encode()
 BACK_KEY = '\x7f'.encode()
 
+def get_path_from_config_converted(label):
+
+    ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
+    
+    if label in ssh_dict:
+        path_from_config = ssh_dict[label]
+
+        #comprobamos si es de tipo int
+        if isinstance(path_from_config,int):
+            path_convertido = path_from_config
+        #comprobamos si es un path
+        elif '/' in path_from_config:
+            path_inicial = ACTUAL_PATH.split("src/")[0]
+            path_convertido = str(path_inicial) + path_from_config
+        # este caso es si es una string
+        else: 
+            path_convertido = path_from_config
+          
+    else:
+        raise KeyError(f"'{label}' no encontrado en la configuración SSH.")
+
+    return path_convertido
+
+SSH_BANNER = get_path_from_config_converted('ssh_banner')
+USERDB_FILE = get_path_from_config_converted('userdb')
+HP_WORKING_DIR = get_path_from_config_converted('working_dir')
+
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     level=logging.INFO,
-    filename= ACTUAL_PATH + ssh_dict['log_file']
+    filename = get_path_from_config_converted('log_file')
 )
 
 # Devuelve un diccionario de los usuarios y de las contraseñas
@@ -54,10 +80,6 @@ def get_user_pass(file_path):
                 user_pass_dict[username] = password
 
     return user_pass_dict
-
-# Función para sacar info del json en función a su etiqueta
-USERDB_FILE = ssh_dict['userdb'] 
-HP_WORKING_DIR = ACTUAL_PATH + ssh_dict['working_dir']
 
 class BasicSshHoneypot(paramiko.ServerInterface):
 
@@ -81,13 +103,11 @@ class BasicSshHoneypot(paramiko.ServerInterface):
     def check_auth_password(self, username, password):
         # Verify the received username and password against the allowed users' credentials.
         global USERNAME_SESSION
-
         ALLOWED_USERS = get_user_pass(USERDB_FILE)
 
         if username in ALLOWED_USERS and password == ALLOWED_USERS[username]:
-            logging.info('New client authenticated with password ({}): username: {}'.format(
+            logging.info(' New client authenticated with password ({}): username: {}'.format(
                 self.client_ip, username))
-            logging.info('New client with ID: ' + str(random.randint(100000, 999999)))
             USERNAME_SESSION = username
             return paramiko.AUTH_SUCCESSFUL
         else:
@@ -112,7 +132,7 @@ class BasicSshHoneypot(paramiko.ServerInterface):
 def handle_connection(client, addr):
 
     client_ip = addr[0]
-    logging.info('New connection from: {}'.format(client_ip))
+    logging.info('[{}] New connection from: {}'.format(client.getpeername()[1], client_ip))
 
     try:
         transport = paramiko.Transport(client)
@@ -152,11 +172,11 @@ def handle_connection(client, addr):
             raise Exception("No shell request")
      
         try:
-            log_file =  ssh_dict['log_dir']
+            log_file =  get_path_from_config_converted('log_dir')
             with open(log_file, "w") as file:
                 file.write(HP_WORKING_DIR)
 
-            welcome_msg = ssh_dict['welcome_msg_client']
+            welcome_msg = get_path_from_config_converted('welcome_msg_client')
             chan.send(welcome_msg +"\r\n\r\n")
             run = True
             while run:
@@ -179,7 +199,7 @@ def handle_connection(client, addr):
                 chan.send("\r\n")
                 command = command.rstrip()
                 print(client_ip+"- received:", command)
-                logging.info('Command received ({}): {}'.format(client_ip, command))
+                logging.info('[{}] [{}] Command received ({}): {}'.format(client.getpeername()[1], USERNAME_SESSION ,client_ip, command))
 
                 if command == "exit":
                     print("Connection closed (via exit command): " + client_ip)
@@ -207,7 +227,6 @@ def handle_connection(client, addr):
         except Exception:
             pass
 
-
 def start_server(port, bind):
     """Init and run the ssh server"""
     try:
@@ -227,17 +246,16 @@ def start_server(port, bind):
         except Exception as err:
             print('*** Listen/accept failed: {}'.format(err))
             traceback.print_exc()
+        
         new_thread = threading.Thread(target=handle_connection, args=(client, addr))
         new_thread.start()
         threads.append(new_thread)
 
-
+    
 if __name__ == "__main__":
 
-    host = ssh_dict['host']
-    port = ssh_dict['port']
+    host = get_path_from_config_converted('host')
+    port = get_path_from_config_converted('port')
     print('Listening for connection ...')
-    ACTUAL_REAL_PATH = os.getcwd()
-    print("EL ACTUAL REAL PATH DEL HP ES: " + ACTUAL_REAL_PATH)
     start_server(port, host)
     

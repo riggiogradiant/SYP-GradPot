@@ -1,35 +1,59 @@
+#ACTUAL PATH: /home/criggio/OWN_HONEYPOT
+
 import logging
 import os
 import subprocess
 import textwrap
 import sys
 
-ACTUAL_REAL_PATH = os.getcwd()
-print("EL ACTUAL REAL PATH ES del SSH FUNCTIONS: "+ ACTUAL_REAL_PATH)
+ACTUAL_PATH = os.getcwd() # este tambien es el config file path
+print(ACTUAL_PATH)
+CONFIG_FILE = ACTUAL_PATH + '/' + 'config.json'
 
-ACTUAL_PATH = os.getcwd() + '/' + 'src/application/ssh'
-
-print("ACTUAL PATH: " + ACTUAL_PATH) 
-CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
-CONFIG_FILE = os.path.normpath(CONFIG_FILE)
-
+# print("ACTUAL PATH: " + ACTUAL_PATH) 
+# CONFIG_FILE = os.path.join(ACTUAL_PATH, 'src/application/configuration', 'config.json')
+# CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
 # Codigo necesario para importar funcion del load_config
 DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
 DIR_SSH = os.path.normpath(DIR_SSH)
-print("DIRECTORIO SSH : " + DIR_SSH)
+
 DIR_APP = os.path.join(ACTUAL_PATH, "..")
 DIR_APP = os.path.normpath(DIR_APP)
-print("DIR APP: "+ DIR_APP)
 # sys.path.append(DIR_APP)
-
 
 sys.path.append("/home/criggio/OWN_HONEYPOT/src/application")
 from configuration.load_config import cargar_seccion_ssh
-print("EL CONFIG FILE DESDE EL FUNCTIONS ES : " + CONFIG_FILE)
+
+
 ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
-print(type(ssh_dict))
 print(ssh_dict)
+
+
+def get_path_from_config_converted(label):
+
+    # ES NONE    
+    # ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
+    # print(ssh_dict)
+
+    if label in ssh_dict:
+        path_from_config = ssh_dict[label]
+
+        #comprobamos si es de tipo int
+        if isinstance(path_from_config,int):
+            path_convertido = path_from_config
+        #comprobamos si es un path
+        elif '/' in path_from_config:
+            path_inicial = ACTUAL_PATH.split("src/")[0]
+            path_convertido = str(path_inicial) + path_from_config
+        # este caso es si es una string
+        else: 
+            path_convertido = path_from_config
+          
+    else:
+        raise KeyError(f"'{label}' no encontrado en la configuración SSH.")
+    print("PATH CONVERTIDO DESDE EL SSH_FUNCTIONS: " + path_convertido)
+    return path_convertido
 
 def handle_cmd(cmd, ip, username):
 
@@ -63,17 +87,18 @@ def handle_cmd(cmd, ip, username):
         response = response + "\r\n"
         print(response)
 
-
 # Función para ejecutar un comando en un directoio concreto 
 def ejecutar_comando_en_directorio(comando, directorio):
 
     # ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
     ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
+    # dir = os.getcwd()
+    # print(dir)
+    # ssh_functions_out_dir = get_path_from_config_converted('ssh_functions_out')
    
 
     try:
     
-        # Utilizamos el método `run` de subprocess para ejecutar el comando en el directorio indicado
         resultado = subprocess.run(comando, shell=True, cwd=directorio, stdout=subprocess.PIPE, text=True)
 
         # Capturamos el código de retorno del comando
@@ -183,4 +208,3 @@ def pwd_get_dir():
 
     except Exception as e:
         print(f"Error al leer el archivo: {e}")
-
