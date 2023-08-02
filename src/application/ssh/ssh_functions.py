@@ -1,5 +1,3 @@
-#ACTUAL PATH: /home/criggio/OWN_HONEYPOT
-
 import logging
 import os
 import subprocess
@@ -7,35 +5,18 @@ import textwrap
 import sys
 
 ACTUAL_PATH = os.getcwd() # este tambien es el config file path
-print(ACTUAL_PATH)
-CONFIG_FILE = ACTUAL_PATH + '/' + 'config.json'
+CONFIG_FILE = os.path.join(ACTUAL_PATH,"../../../", "config.json")
+CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
-# print("ACTUAL PATH: " + ACTUAL_PATH) 
-# CONFIG_FILE = os.path.join(ACTUAL_PATH, 'src/application/configuration', 'config.json')
-# CONFIG_FILE = os.path.normpath(CONFIG_FILE)
-
-# Codigo necesario para importar funcion del load_config
-DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
-DIR_SSH = os.path.normpath(DIR_SSH)
-
-DIR_APP = os.path.join(ACTUAL_PATH, "..")
-DIR_APP = os.path.normpath(DIR_APP)
-# sys.path.append(DIR_APP)
-
-sys.path.append("/home/criggio/OWN_HONEYPOT/src/application")
-from configuration.load_config import cargar_seccion_ssh
-
-
-ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
-print(ssh_dict)
 
 
 def get_path_from_config_converted(label):
 
-    # ES NONE    
-    # ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
-    # print(ssh_dict)
-
+    src_path = os.path.normpath(os.path.join(ACTUAL_PATH, '..', '..'))
+    sys.path.append(src_path)
+    from application.configuration.load_config import cargar_seccion_ssh
+    ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
+    
     if label in ssh_dict:
         path_from_config = ssh_dict[label]
 
@@ -51,9 +32,9 @@ def get_path_from_config_converted(label):
             path_convertido = path_from_config
           
     else:
-        raise KeyError(f"'{label}' no encontrado en la configuración SSH.")
-    print("PATH CONVERTIDO DESDE EL SSH_FUNCTIONS: " + path_convertido)
+        raise KeyError(f"'{label}' no encontrado en la configuración SSH.")    
     return path_convertido
+
 
 def handle_cmd(cmd, ip, username):
 
@@ -90,11 +71,7 @@ def handle_cmd(cmd, ip, username):
 # Función para ejecutar un comando en un directoio concreto 
 def ejecutar_comando_en_directorio(comando, directorio):
 
-    # ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
-    ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
-    # dir = os.getcwd()
-    # print(dir)
-    # ssh_functions_out_dir = get_path_from_config_converted('ssh_functions_out')
+    ssh_functions_out_dir = get_path_from_config_converted('ssh_functions_out')
    
 
     try:
@@ -119,9 +96,8 @@ def ejecutar_comando_en_directorio(comando, directorio):
 def printear_respuesta_archivo(cmd):
     respuesta = []
     
-    # ssh_functions_out_dir = os.path.normpath(ACTUAL_PATH +"/" + ssh_dict['ssh_functions_out']) 
-    ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
-    
+    # ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
+    ssh_functions_out_dir = get_path_from_config_converted('ssh_functions_out')
     
 
     try:
@@ -156,9 +132,7 @@ def printear_respuesta_archivo(cmd):
 # Función para lidiar con los cambios de directorio
 def cd_dealer(cmd):
     directorio = cmd.split("cd ")[1].strip()
-    
-    # log_dir = ssh_dict['log_dir']
-    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
+    log_dir = get_path_from_config_converted('log_dir')
 
     try:
     # Leer la primera línea del archivo y asignarla a una variable
@@ -177,7 +151,7 @@ def cd_dealer(cmd):
 def obtener_working_dir():
 
     # log_dir = ssh_dict['log_dir']
-    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
+    log_dir = get_path_from_config_converted('log_dir')
     try:
         # Leer la primera línea del archivo y asignarla a una variable
         with open(log_dir, "r") as file:
@@ -190,12 +164,8 @@ def obtener_working_dir():
     return None
 
 def pwd_get_dir():
-    
-    # log_dir = ssh_dict['log_dir']
-    # log_dir = os.path.normpath(ACTUAL_PATH +'/' + log_dir)
 
-    # log_dir = ssh_dict['log_dir']
-    log_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/dir.log"
+    log_dir = get_path_from_config_converted('log_dir')
 
     try:
         # Leer la primera línea del archivo y asignarla a una variable

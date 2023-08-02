@@ -6,60 +6,25 @@ import traceback
 import logging
 import paramiko
 import subprocess
-import random
-
+from ssh_functions import get_path_from_config_converted
 
 HOST_KEY = paramiko.RSAKey(filename='server.key')
 
 #Variable Global para implementar el whoami con los distintos usuarios
 USERNAME_SESSION = ""
-
-
-
 ACTUAL_PATH = os.getcwd()
 CONFIG_FILE = os.path.join(ACTUAL_PATH, '../../../', 'config.json')
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
-# Codigo necesario para importar funcion del load_config
-DIR_SSH= os.path.join(ACTUAL_PATH, "..", "ssh")
-DIR_SSH = os.path.normpath(DIR_SSH)
-DIR_APP = os.path.join(DIR_SSH, "..")
-DIR_APP = os.path.normpath(DIR_APP)
-sys.path.append(DIR_APP)
-from configuration.load_config import cargar_seccion_ssh
+SSH_BANNER = get_path_from_config_converted('ssh_banner')
+USERDB_FILE = get_path_from_config_converted('userdb')
+HP_WORKING_DIR = get_path_from_config_converted('working_dir')
  
 UP_KEY = '\x1b[A'.encode()
 DOWN_KEY = '\x1b[B'.encode()
 RIGHT_KEY = '\x1b[C'.encode()
 LEFT_KEY = '\x1b[D'.encode()
 BACK_KEY = '\x7f'.encode()
-
-def get_path_from_config_converted(label):
-
-    ssh_dict = cargar_seccion_ssh(CONFIG_FILE)
-    
-    if label in ssh_dict:
-        path_from_config = ssh_dict[label]
-
-        #comprobamos si es de tipo int
-        if isinstance(path_from_config,int):
-            path_convertido = path_from_config
-        #comprobamos si es un path
-        elif '/' in path_from_config:
-            path_inicial = ACTUAL_PATH.split("src/")[0]
-            path_convertido = str(path_inicial) + path_from_config
-        # este caso es si es una string
-        else: 
-            path_convertido = path_from_config
-          
-    else:
-        raise KeyError(f"'{label}' no encontrado en la configuración SSH.")
-
-    return path_convertido
-
-SSH_BANNER = get_path_from_config_converted('ssh_banner')
-USERDB_FILE = get_path_from_config_converted('userdb')
-HP_WORKING_DIR = get_path_from_config_converted('working_dir')
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
