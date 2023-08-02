@@ -215,7 +215,6 @@ def start_server(port, bind):
         new_thread = threading.Thread(target=handle_connection, args=(client, addr))
         new_thread.start()
         threads.append(new_thread)
-
     
 if __name__ == "__main__":
 

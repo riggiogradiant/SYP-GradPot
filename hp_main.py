@@ -1,7 +1,7 @@
 import sys
 import os
 import subprocess
-sys.path.append("/home/criggio/OWN_HONEYPOT/src/application/configuration")
+
 from src.application.ssh import ssh_functions
 
 
@@ -11,7 +11,7 @@ ruta_hp = os.getcwd() + "/src/application/ssh"
 # print(ruta_llamada)
 
 #Si es la llamda de ejecución del HP
-if ruta_llamada.endswith("OWN_HONEYPOT"):
+if ruta_llamada.endswith("OWN_HONEYPOT") or ruta_llamada.endswith("SYP-Gradpot"):
     os.chdir(ruta_hp)
     subprocess.run(["python3", "honeypot.py"])
 # Comprobar si las peticiones vienen de SSH

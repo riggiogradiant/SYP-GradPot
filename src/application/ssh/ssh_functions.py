@@ -9,7 +9,6 @@ CONFIG_FILE = os.path.join(ACTUAL_PATH,"../../../", "config.json")
 CONFIG_FILE = os.path.normpath(CONFIG_FILE)
 
 
-
 def get_path_from_config_converted(label):
 
     src_path = os.path.normpath(os.path.join(ACTUAL_PATH, '..', '..'))
@@ -96,7 +95,6 @@ def ejecutar_comando_en_directorio(comando, directorio):
 def printear_respuesta_archivo(cmd):
     respuesta = []
     
-    # ssh_functions_out_dir = "/home/criggio/OWN_HONEYPOT/src/infrastructure/logs/ssh_functions_out.log"
     ssh_functions_out_dir = get_path_from_config_converted('ssh_functions_out')
     
 
