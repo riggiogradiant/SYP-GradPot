@@ -163,11 +163,11 @@ def handle_connection(client, addr):
                 
                 chan.send("\r\n")
                 command = command.rstrip()
-                print(client_ip+"- received:", command)
-                logging.info('[{}] [{}] Command received ({}): {}'.format(client.getpeername()[1], USERNAME_SESSION ,client_ip, command))
+                print("[SSH] "+ client_ip + " - received:", command)
+                logging.info('[SSH] [{}] [{}] Command received ({}): {}'.format(client.getpeername()[1], USERNAME_SESSION ,client_ip, command))
 
                 if command == "exit":
-                    print("Connection closed (via exit command): " + client_ip)
+                    print("[SSH] Connection closed (via exit command): " + client_ip)
                     run = False
 
                 else:
@@ -220,6 +220,6 @@ if __name__ == "__main__":
 
     host = get_path_from_config_converted('host')
     port = get_path_from_config_converted('port')
-    print('Listening for connection ...')
+    print('Listening for SSH connections ...')
     start_server(port, host)
     

@@ -9,5 +9,9 @@
       "ssh_banner": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.1",
       "welcome_msg_client": "Welcome to Ubuntu 18.04.4 LTS (Linux 4.15.0-128-generic x86_64)",
       "ssh_functions_out" : "/src/infrastructure/logs/ssh_functions_out.log"
+    },
+    
+    "modbus":{
+      "log_file" : "/src/infrastructure/logs/modbus_honeypot.log"
     }
-  }
+  } 
