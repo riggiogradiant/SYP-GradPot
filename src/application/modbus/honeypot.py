@@ -10,7 +10,6 @@ logging.basicConfig(
     filename = get_path_from_config_converted('log_file')
 )
 
-print(get_path_from_config_converted('log_file'))
 print("Listening for Modbus connections ...")
 
 #Hacemos el sleep para ver que concurrentemente puede lidiar tanto con ssh como con Modbus
