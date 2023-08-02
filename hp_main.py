@@ -7,11 +7,13 @@ from src.application.ssh import ssh_functions
 
 # Obtener la ruta absoluta del archivo que llamó a main.py
 ruta_llamada = os.path.abspath(os.getcwd())
-ruta_hp = os.getcwd() + "/src/application/ssh"
-# print(ruta_llamada)
+ruta_hp = str(os.getcwd()) + "/src/application/ssh"
+print(ruta_hp)
+print(ruta_llamada)
+print("/src/application/ssh")
 
 #Si es la llamda de ejecución del HP
-if ruta_llamada.endswith("OWN_HONEYPOT") or ruta_llamada.endswith("SYP-Gradpot"):
+if ruta_llamada.endswith("OWN_HONEYPOT") or ruta_llamada.endswith("SYP-GradPot"):
     os.chdir(ruta_hp)
     subprocess.run(["python3", "honeypot.py"])
 # Comprobar si las peticiones vienen de SSH
