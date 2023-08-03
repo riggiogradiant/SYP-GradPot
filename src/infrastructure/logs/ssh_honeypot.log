@@ -39,3 +39,4 @@
 2023-08-02 14:52:09,735 - root - INFO - Client compression (127.0.0.1): none
 2023-08-02 14:52:09,735 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
 2023-08-02 14:52:09,735 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-02 15:01:06,643 - root - INFO - [SSH] [56496] [u] Command received (127.0.0.1): exit

@@ -1,0 +1,5 @@
+# /etc/ssh/sshd_config
+
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords no

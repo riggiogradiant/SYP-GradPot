@@ -220,6 +220,6 @@ if __name__ == "__main__":
 
     host = get_path_from_config_converted('host')
     port = get_path_from_config_converted('port')
-    print('Listening for SSH connections ...')
+    print('Listening for SSH connections on ip: '+host+' and port: '+str(port)+' ...')
     start_server(port, host)
     
