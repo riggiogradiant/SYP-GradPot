@@ -2,7 +2,7 @@
     "ssh":{
       "log_file" : "/src/infrastructure/logs/ssh_honeypot.log",
       "userdb" : "/src/application/ssh/honeypot_files/etc/userdb.txt",
-      "host" : "127.0.0.1",
+      "host" : "0.0.0.0",
       "port" : 2222,
       "working_dir" : "/src/application/ssh/honeypot_files",
       "log_dir" : "/src/infrastructure/logs/dir.log",

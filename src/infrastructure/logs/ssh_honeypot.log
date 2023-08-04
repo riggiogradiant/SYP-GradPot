@@ -40,3 +40,88 @@
 2023-08-02 14:52:09,735 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
 2023-08-02 14:52:09,735 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
 2023-08-02 15:01:06,643 - root - INFO - [SSH] [56496] [u] Command received (127.0.0.1): exit
+2023-08-04 10:43:32,260 - root - INFO - [60448] New connection from: 127.0.0.1
+2023-08-04 10:43:32,261 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 10:43:32,271 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 10:43:32,271 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-08-04 10:43:34,333 - root - INFO -  New client authenticated with password (127.0.0.1): username: u
+2023-08-04 10:43:34,333 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 10:43:34,334 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 10:43:34,335 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 10:43:34,335 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 10:43:34,335 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 10:43:34,335 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 10:44:27,459 - root - INFO - [SSH] [60448] [u] Command received (127.0.0.1): exit
+2023-08-04 10:44:29,635 - root - INFO - [SSH] [60448] [u] Command received (127.0.0.1): exit
+2023-08-04 10:44:29,636 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2023-08-04 10:47:24,071 - root - INFO - [38420] New connection from: 127.0.0.1
+2023-08-04 10:47:24,072 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 10:47:24,084 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 10:47:24,084 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-08-04 10:47:25,530 - root - INFO -  New client authenticated with password (127.0.0.1): username: u
+2023-08-04 10:47:25,530 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 10:47:25,531 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 10:47:25,531 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 10:47:25,531 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 10:47:25,531 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 10:47:25,531 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 11:51:04,043 - root - INFO - [41128] New connection from: 127.0.0.1
+2023-08-04 11:51:04,043 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 11:51:04,053 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 11:51:04,053 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-08-04 11:51:05,845 - root - INFO -  New client authenticated with password (127.0.0.1): username: u
+2023-08-04 11:51:05,845 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 11:51:05,846 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 11:51:05,846 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 11:51:05,846 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 11:51:05,846 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 11:51:05,846 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 11:51:06,638 - root - INFO - [SSH] [41128] [u] Command received (127.0.0.1): ls
+2023-08-04 11:51:07,197 - root - INFO - [SSH] [41128] [u] Command received (127.0.0.1): pwd
+2023-08-04 12:07:47,230 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2023-08-04 12:34:23,119 - root - INFO - [57926] New connection from: 127.0.0.1
+2023-08-04 12:34:23,120 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 12:34:23,131 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 12:34:23,131 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-08-04 12:34:24,657 - root - INFO -  New client authenticated with password (127.0.0.1): username: u
+2023-08-04 12:34:24,658 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 12:34:24,658 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 12:34:24,659 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 12:34:24,659 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 12:34:24,659 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 12:34:24,659 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 12:34:25,089 - root - INFO - [SSH] [57926] [u] Command received (127.0.0.1): ls
+2023-08-04 12:34:25,618 - root - INFO - [SSH] [57926] [u] Command received (127.0.0.1): pwd
+2023-08-04 12:34:26,362 - root - INFO - [SSH] [57926] [u] Command received (127.0.0.1): exir
+2023-08-04 12:34:29,049 - root - INFO - [SSH] [57926] [u] Command received (127.0.0.1): exit
+2023-08-04 12:34:29,050 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2023-08-04 12:45:20,218 - root - INFO - [45784] New connection from: 127.0.0.1
+2023-08-04 12:45:20,219 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 12:45:20,230 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 12:45:20,231 - root - INFO - client called get_allowed_auths (127.0.0.1) with username u
+2023-08-04 12:45:21,940 - root - INFO -  New client authenticated with password (127.0.0.1): username: u
+2023-08-04 12:45:21,940 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 12:45:21,941 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 12:45:21,941 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 12:45:21,941 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 12:45:21,941 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 12:45:21,941 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 12:45:26,835 - root - INFO - [45792] New connection from: 127.0.0.1
+2023-08-04 12:45:26,835 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2023-08-04 12:45:26,845 - paramiko.transport - INFO - Auth rejected (none).
+2023-08-04 12:45:26,845 - root - INFO - client called get_allowed_auths (127.0.0.1) with username a
+2023-08-04 12:45:27,517 - root - INFO -  New client authenticated with password (127.0.0.1): username: a
+2023-08-04 12:45:27,517 - paramiko.transport - INFO - Auth granted (password).
+2023-08-04 12:45:27,517 - root - INFO - client called check_channel_request (127.0.0.1): session
+2023-08-04 12:45:27,517 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2023-08-04 12:45:27,518 - root - INFO - Client compression (127.0.0.1): none
+2023-08-04 12:45:27,518 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.3
+2023-08-04 12:45:27,518 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2023-08-04 12:45:29,790 - root - INFO - [SSH] [45784] [a] Command received (127.0.0.1): ls
+2023-08-04 12:45:31,373 - root - INFO - [SSH] [45784] [a] Command received (127.0.0.1): pwd
+2023-08-04 12:45:33,878 - root - INFO - [SSH] [45792] [a] Command received (127.0.0.1): whoami
+2023-08-04 12:57:41,244 - root - INFO - [SSH] [45784] [a] Command received (127.0.0.1): exit
+2023-08-04 12:57:44,260 - root - INFO - [SSH] [45792] [a] Command received (127.0.0.1): exit
+2023-08-04 12:57:44,261 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2023-08-04 12:57:47,220 - root - INFO - [SSH] [45784] [a] Command received (127.0.0.1): exit
+2023-08-04 12:57:47,221 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
