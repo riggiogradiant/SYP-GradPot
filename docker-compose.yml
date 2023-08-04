@@ -8,4 +8,4 @@ services:
     image: gradpot:latest 
     ports:
       - "2222:2222"
-    tty: true # Asignar una terminal al contenedor
+    tty: true 
