@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: gradpot:latest  # Nombre personalizado para la imagen
+    image: gradpot:latest 
     ports:
       - "2222:2222"
     tty: true # Asignar una terminal al contenedor
