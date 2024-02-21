@@ -197,3 +197,25 @@
 2023-08-04 13:53:07,306 - root - INFO - [SSH] [45688] [u] Command received (127.0.0.1): ls
 2023-08-04 13:53:09,137 - root - INFO - [SSH] [45688] [u] Command received (127.0.0.1): exit
 2023-08-04 13:53:09,137 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
+2024-02-19 13:54:15,129 - root - INFO - [46256] New connection from: 127.0.0.1
+2024-02-19 13:54:15,130 - paramiko.transport - INFO - Connected (version 2.0, client OpenSSH_8.9p1)
+2024-02-19 13:54:18,024 - paramiko.transport - INFO - Auth rejected (none).
+2024-02-19 13:54:18,024 - root - INFO - client called get_allowed_auths (127.0.0.1) with username a
+2024-02-19 13:54:19,483 - root - INFO -  New client authenticated with password (127.0.0.1): username: a
+2024-02-19 13:54:19,484 - paramiko.transport - INFO - Auth granted (password).
+2024-02-19 13:54:19,484 - root - INFO - client called check_channel_request (127.0.0.1): session
+2024-02-19 13:54:19,485 - root - INFO - Client mac (127.0.0.1): hmac-sha2-256-etm@openssh.com
+2024-02-19 13:54:19,485 - root - INFO - Client compression (127.0.0.1): none
+2024-02-19 13:54:19,485 - root - INFO - Client SSH version (127.0.0.1): SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.6
+2024-02-19 13:54:19,485 - root - INFO - Client SSH cipher (127.0.0.1): aes128-ctr
+2024-02-19 13:54:23,901 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): ls
+2024-02-19 13:54:26,127 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): pwd
+2024-02-19 13:54:29,058 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): cd bin
+2024-02-19 13:54:29,725 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): ls
+2024-02-19 13:54:33,860 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): cd ..
+2024-02-19 13:54:34,369 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): ls
+2024-02-19 13:54:36,738 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): pwd
+2024-02-19 13:54:40,599 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): cd etc
+2024-02-19 13:54:42,085 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): ls
+2024-02-19 13:54:51,788 - root - INFO - [SSH] [46256] [a] Command received (127.0.0.1): nano use
+2024-02-19 13:55:13,064 - paramiko.transport - INFO - Disconnect (code 11): disconnected by user
